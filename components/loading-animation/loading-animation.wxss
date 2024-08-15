@@ -1,0 +1,48 @@
+.head{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /* left:50%; */
+  /* transform:translateX(50%) */
+}
+.header{
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  /* left: 163px; */
+  top: 322px;
+}
+
+.title{
+  /* Guidance */
+  position: absolute;
+  width: 85px;
+  height: 23px;
+  left: 49%;
+  margin-top:100vh;
+  transform: translateX(-50%);
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+
+  color: #000000;
+
+
+}
+.plane{
+  position: absolute;
+  width:20px;
+  height: 20px;
+  animation: rotatePlane 2s linear infinite;
+}
+@keyframes rotatePlane{
+  from{
+    transform: rotate(0deg) translate(-42px,-42px)
+  }
+  to{
+    transform: rotate(360deg) translate(-42px,-42px)
+  }
+}

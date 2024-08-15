@@ -1,0 +1,4 @@
+<!--pages/home/home.wxml-->
+<view class="frame-container">
+  <upframe></upframe>
+</view>

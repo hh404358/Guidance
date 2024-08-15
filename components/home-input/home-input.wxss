@@ -1,0 +1,75 @@
+/* components/home-input/home-input.wxss */
+.container{
+ display: flex;
+}
+/* Rectangle 52 */
+
+.rectangle{
+  /* position:relative; */
+  display: flex;
+  width: 50vh;
+  height: 6vh;
+  padding-top: 2vh;
+  background: #FFFFFF; 
+  box-shadow: 0px 4px 4.8px rgba(0, 0, 0, 0.07);
+  border-radius: 12px;
+}
+
+
+/* 搜索飞机/动车班次或目的地 */
+.font{
+  padding-top: 2px;
+  padding-bottom: 10px;
+  margin-left: 10px;
+  font-family: 'Romanesco';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #9F9F9F;
+}
+
+
+
+/* Vector */
+
+.vector{
+  margin-left: 1vh;
+  width: 8vh;
+  height: 8vh;
+  left: 341px;
+  border-radius: 50%;
+  background: #B8C5DC;
+}
+@font-face {
+  font-family: "iconfont"; /* Project id 4649841 */
+  color: #aaa;
+  src: url('//at.alicdn.com/t/c/font_4649841_3ksqxpynlxq.woff2?t=1723293706118') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4649841_3ksqxpynlxq.woff?t=1723293706118') format('woff'),
+       url('//at.alicdn.com/t/c/font_4649841_3ksqxpynlxq.ttf?t=1723293706118') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 28px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-sousuo:before {
+  content: "\e70a";
+
+}
+.icon-saoyisao{
+  padding-left: 60px;
+}
+.icon-saoyisao:before {
+  content: "\e891";
+}
+.icon-yuyin_o{
+  margin-left: 10px;
+}
+.icon-yuyin_o:before {
+  content: "\eb6c";
+}
+

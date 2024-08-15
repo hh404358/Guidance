@@ -1,0 +1,7 @@
+<view class = "head">
+
+  <image src="/assests/image.png" class="header"></image>
+  <image src="/assests/Vector.png" class="plane"></image>
+
+<view class="title">Guidance</view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "upframe":"../../components/upframe/upframe",
+    "post-frame":"../../components/post-frame/post-frame"
+  }
+}

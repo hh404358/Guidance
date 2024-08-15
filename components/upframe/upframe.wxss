@@ -1,0 +1,139 @@
+/* components/upframe/upframe.wxss */
+.frame-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height:180vh;
+  color: #aaa;
+}
+
+.line{
+  color:#aaa;
+  transform: translateX(45%);
+}
+.input{
+  padding-top: 0px;
+  margin-bottom: 5vh;
+}
+.movablebox{
+  /* padding-top: 3vh; */
+  /* padding-left: 4vh; */
+  position: relative;
+  padding-left: 1%;
+  width:100%;
+  height:100vh;
+  overflow: hidden;
+  background-color: pink;
+}
+.text{
+/* ”第一次“系列教程 */
+  margin-top: 10px;
+  font-family: 'Romanesco';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 19px;
+  color: #000000;
+}
+.label{
+  display: block;
+  font-size: 15px;
+  float: left;
+}
+.label:hover{
+  float: left;
+  font-size: 18px;
+  color: #000000;
+}
+.type{
+  margin-top: 10px;
+  margin-right: 10px;
+  position: relative;
+  display: inline-block;
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  line-height: 6vh;
+  /* border:  #9F9F9F; */
+  border-top: 0.05px solid #9F9F9F;
+  border-bottom: 0.05px solid #9F9F9F;
+
+}
+.select{
+  position: absolute;
+  right:10px;
+  margin-left: 20px;
+  margin-top:8px;
+  color:  #9F9F9F;
+  transform: rotate(180deg);
+  width: 12px;
+  height: 12px;
+  border-bottom: 1.5px solid #9F9F9F;
+  border-right: 1.5px solid #9F9F9F;
+  transform: rotate(45deg);
+}
+.select-reverse{
+  position: absolute;
+  right:10px;
+  margin-left: 20px;
+  margin-top:16px;
+  color:  #9F9F9F;
+  transform: rotate(180deg);
+  width: 12px;
+  height: 12px;
+  border-bottom: 1.5px solid #9F9F9F;
+  border-right: 1.5px solid #9F9F9F;
+  transform: rotate(225deg);
+}
+
+.type-content{
+  z-index: 3;
+  margin:auto;
+  position:absolute;
+  display: flex;
+  flex-direction: column;
+  background: #E3F7C8;
+  width: 100%;
+  height: 70vh;
+}
+.title{
+  display: flex;
+}
+.main-title{
+  margin-top: 10px;
+  font-family: 'Romanesco';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  color: #000000;
+}
+.sub-title{
+  margin-top: 10px;
+  margin-left: 10px;
+  font-family: 'Romanesco';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  color: #9F9F9F;
+}
+.formal{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(60%, auto);
+  /* grid-gap: 10px; */
+  overflow: hidden;
+  gap: 2px;
+background: #E2FAF6;
+
+}
+.informal{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(60%, auto);
+  grid-gap: 10px;
+  overflow: hidden;
+}

@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/home/home",
+    "pages/community/community"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Guidance",
+    "navigationBarBackgroundColor": "#E3F7C8"
+    
+
+  },
+  "usingComponents": {
+    "loading-animation": "/components/loading-animation/loading-animation",
+    "home-input": "/components/home-input/home-input"
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "tabbar":{
+    "list":[
+      {
+        "pagePath":"pages/home/home",
+        "text":"首页",
+        "iconPath":"assests/home.png"
+      },
+      {
+        "pagePath":"pages/community/community",
+        "text":"社区",
+        "iconPath":"assests/community.png"
+
+      },
+      {
+        "pagePath":"pages/my/my",
+        "text":"我的",
+        "iconPath":"assests/my.png"
+      }
+    ]
+  }
+}

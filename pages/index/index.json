@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "loding-animation":"/components/loading-animation/loading-animation",
+    "home-input":"/components/home-input/home-input",
+    "upframe":"/components/upframe/upframe"
+    
+  }
+}

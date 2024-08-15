@@ -1,0 +1,27 @@
+<!--components/post-frame/post-frame.wxml-->
+
+
+  <view class="post">
+    <card class="box" wx:for="{{posts}}" wx:key="id" bind:tap="postDetail" data-id="{{item.id}}">
+    <view class="image-container">
+      <span class="formal" wx:if="{{item.formal}}">官方</span>
+      <image src="{{item.image}}"  mode="aspectFit" class="img"  ></image>
+    </view>
+      <view class="text-container">
+        <text class = "title">{{item.title}}</text>
+        <!-- <image class = "avatar" src="{{item.avatar}}" ></image> -->
+        <text class="userName">{{item.userName}}</text>
+        <text style="float: right;">{{item.thumb}}</text>
+        <!-- <image class = "thumb" src="{{item.isThumb}} ? '../../icons/爱心-面.png' : '../../icons/爱心-线框.png'}}" >{{item.thumb}}</image> -->
+        <view class="position">
+        <!-- <image src="../../icons/位置-面.png" class = "pos"></image> -->
+      <text class="address">{{item.address}}</text>
+      
+      </view>
+      </view>
+      
+    </card>
+  </view>
+
+  
+

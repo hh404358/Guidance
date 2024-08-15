@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "home-input":"../home-input/home-input",
+    "post-frame":"../post-frame/post-frame"
+  }
+}
