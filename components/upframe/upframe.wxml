@@ -17,19 +17,20 @@
     <span class="select-reverse" bind:tap="handleSelect"></span>
     </view>
     <view class="formal">
-      <span wx:for="{{formal}}" wx:key="id" class="formal">{{item.name}} </span>
+      <span wx:for="{{formal}}" wx:key="id" class="item">{{item.name}} </span>
     </view>
     <view class="title">
     <span class="main-title">大众频道</span>
     <span class="sub-title">点击进入频道</span>
     </view>
     <view class="informal">
-      <span wx:for="{{informal}}" wx:key="id" class="informal">{{item.name}}</span>
+      <span wx:for="{{informal}}" wx:key="id" class="item">{{item.name}}</span>
     </view>
      
     </view>
   <span class="select" bind:tap="handleSelect"></span>
   </view>
+  <view class="mask" wx:if="{{selected}}"></view>
   <post-frame class="box"></post-frame>
   </movable-view>
 </movable-area>

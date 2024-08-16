@@ -1,7 +1,7 @@
 <!--index.wxml-->
   <view class="container">
-    <loading-animation wx:if="{{showTransition}}" :class="{active:transitionCompleted}" ></loading-animation>
-    <view class="box" wx:else>
+    
+    <view class="box">
      <!-- <upframe></upframe> -->
      <!-- <navigator url="/pages/home/home" open-type="switchTab"></navigator> -->
   

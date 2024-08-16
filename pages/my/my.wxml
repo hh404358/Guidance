@@ -1,2 +1,4 @@
 <!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<container>
+  <text>hahaha</text>
+</container>

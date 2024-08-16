@@ -1,6 +1,8 @@
 {
   "usingComponents": {
     "upframe":"../../components/upframe/upframe",
-    "post-frame":"../../components/post-frame/post-frame"
+    "post-frame":"../../components/post-frame/post-frame",
+    "head":"../../components/head/head"
+   
   }
 }

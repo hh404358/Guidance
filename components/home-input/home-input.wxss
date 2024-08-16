@@ -7,7 +7,7 @@
 .rectangle{
   /* position:relative; */
   display: flex;
-  width: 50vh;
+  width: 58vh;
   height: 6vh;
   padding-top: 2vh;
   background: #FFFFFF; 
@@ -61,7 +61,7 @@
 
 }
 .icon-saoyisao{
-  padding-left: 60px;
+  padding-left: 80px;
 }
 .icon-saoyisao:before {
   content: "\e891";

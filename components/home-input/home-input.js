@@ -22,6 +22,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    
+    handleSearch(){
+      console.log('click')
+      wx.navigateTo({
+        url: '/pages/search/search.js',
+      })
+    }
   },
 })

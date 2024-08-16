@@ -18,18 +18,7 @@ Page({
   },
   //监听小程序初始化。
   onLoad(){
-    setTimeout(() => {
-      console.log("页面加载完毕")
-      this.setData({
-        transitionCompleted:true,
-        showTransition:false
-      })
-      wx.navigateTo({
-        url: '/pages/home/home',
-      })
-      //使用这种方式无法实现页面动态更新
-      // this.transitionCompleted = true;   
-    }, 2000); // 调整动画执行的时间
+   
   },
   onReady(){
     // setTimeout(() => {

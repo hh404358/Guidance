@@ -1,4 +1,9 @@
 <!--pages/home/home.wxml-->
-<view class="frame-container">
+
+<loading-animation wx:if="{{showTransition}}" :class="{active:transitionCompleted}" ></loading-animation>
+<view wx:else class="frame-container" style="padding-top: {{pageTopHeight}}px;">
+  <view class="head" >
+    Guidance
+  </view> 
   <upframe></upframe>
 </view>

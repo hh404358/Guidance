@@ -1,4 +1,33 @@
 /* pages/home/home.wxss */
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #E3F7C8;
+}
 .frame-container{
   background: #E3F7C8;
+}
+.head{
+  padding: 30px;
+  height: 10px;
+  line-height: 100px;
+  text-align: center;
+  margin:auto;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+
+  color: #000000;
+
+
+}
+.mask{
+  z-index: 2;
+  height:100vh;
+  background: transparent #849174;
 }
