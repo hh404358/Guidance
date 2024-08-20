@@ -28,7 +28,8 @@
     </view>
      
     </view>
+    
   <span class="select" bind:tap="handleSelect"></span>
   </view>
-  <post-frame>post</post-frame>
+  <post-frame ></post-frame>
 </view>

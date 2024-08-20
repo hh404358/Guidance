@@ -5,14 +5,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    history:[
+      'hhhhhhhhhhhhhhhh',
+      '11','22','33','44',
+      '55','hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh',
+      'hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh',
+      'hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh',
+    ],
+    more:false,
+    hot:[
+      'hhhhhhhhhhhhhhhh',
+      '11','22','33','44',
+      '55','hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh',
+      'hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh',
+      'hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh',
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    if(!this.data.more){
+      console.log(this.data.history)
+      this.setData({
+        history:[history[1],history[2],history[3],history[4]]
+      })
+    }
   },
 
   /**
@@ -62,5 +81,17 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  back(){
+    wx.switchTab({
+      url: '/pages/community/community',
+    })
+  },
+  clearAll(){
+    history = this.data.history
+    this.setData({
+      history : []
+    })
+    console.log(this.data.history)
   }
 })

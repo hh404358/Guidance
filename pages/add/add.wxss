@@ -1,0 +1,103 @@
+/* pages/add/add.wxss */
+page {
+  height: 100vh;
+  /* display: flex; */
+  flex-direction: column;
+  background: #E3F7C8;
+}
+.back{
+  position: absolute;
+  left: 4.36%;
+  right: 91.03%;
+  top: 5.8%;
+  bottom: 91.47%;
+  color:  #9F9F9F;
+  transform: rotate(180deg);
+  width: 10px;
+  height: 10px;
+  border-bottom: 1.5px solid #9F9F9F;
+  border-right: 1.5px solid #9F9F9F;
+  transform: rotate(135deg);
+
+}
+.title{
+  border-top: 0.5px solid #B0B6B7;
+  border-bottom:  0.5px solid #B0B6B7;
+  font-family: 'Inder';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 30px;
+  /* identical to box height */
+
+  color: #B0B6B7;
+
+
+}
+.body{
+  display: flex;
+  font-family: 'Inder';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  height:  100px;
+/* line-height: 100px; */
+
+  color: #B0B6B7;
+  border-bottom:  0.5px solid #B0B6B7;
+
+}
+.body-footer{
+  margin-top: 80px;
+}
+
+.label{
+  height: 20px;
+  background: #D6E5C1;
+  border-radius: 13.5px;
+
+  font-family: 'Inder';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #45413C;
+
+}
+.user{
+  width: 100px;
+  height: 20px;
+  background: #D6E5C1;
+  border-radius: 13.5px;
+  font-family: 'Inder';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #45413C;
+}
+.pos{
+  height: 40px;
+  border-bottom:  0.5px solid #B0B6B7;
+  display: flex;
+}
+.icon{
+  margin: 10px;
+  width: 20px;
+  height: 20px;
+}
+.public{
+  height:40px;
+  /* text-align: center; */
+  border-bottom:  0.5px solid #B0B6B7;
+  display: flex;
+}
+.text{
+  margin-top: 10px;
+  font-family: 'Inder';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #45413C;
+}

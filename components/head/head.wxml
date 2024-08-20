@@ -1,6 +1,6 @@
 <!--components/head/head.wxml-->
 <view class="head" style="padding-top: {{paddingTopNum}};">
-<image src="../../assests/add.png" class="add"></image>
-<view class="iconfont icon-sousuo" />
-  head
+<image src="../../assests/add.png" class="add" bind:tap="add"></image>
+<view class="iconfont icon-sousuo" bind:tap="toSearch"/>
+  社区
 </view>

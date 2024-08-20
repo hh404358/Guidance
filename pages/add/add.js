@@ -1,12 +1,11 @@
-// pages/home/home.js
+// pages/add/add.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    transitionCompleted:false,
-    showTransition:true
+
   },
 
   /**
@@ -20,15 +19,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-    setTimeout(() => {
-      console.log("页面加载完毕")
-      this.setData({
-        transitionCompleted:true,
-        showTransition:false
-      })
-      //使用这种方式无法实现页面动态更新
-      // this.transitionCompleted = true;   
-    }, 2000); // 调整动画执行的时间
+
   },
 
   /**
@@ -72,22 +63,9 @@ Page({
   onShareAppMessage() {
 
   },
-  goIndoor(){
-    console.log('indoor')
-    wx.navigateTo({
-      url: '../indoor-guidance',
-      fail(e){
-        console.log(e)
-      }
-    })
-  },
-  goBack(){
-    console.log('back')
-    wx.navigateTo({
-      url: '../indoor-guidance',
-      fail(e){
-        console.log(e)
-      }
+  back(){
+    wx.switchTab({
+      url: '/pages/community/community',
     })
   }
 })

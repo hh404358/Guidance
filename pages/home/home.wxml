@@ -5,5 +5,13 @@
   <view class="head" >
     Guidance
   </view> 
-  <upframe></upframe>
+  <view class="body">
+  <view class="map"></view>
+    <view class="block1" bind:tap="goIndoor">AR</view>
+    <view class="block2" bind:tap="goBack">
+      <image src="../../assests/goback.png" class="goback"></image>
+    </view>
+  </view>
+  <view class="mask"><upframe style="z-index: 10;"></upframe></view>
+
 </view>

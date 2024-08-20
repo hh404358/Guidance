@@ -15,20 +15,26 @@ Component({
     posts:[
       {
         id:1,
-        title:'haha',
+        title:'title1',
         image:'../../assests/community.png',
+        userName:'haha',
+        avatar:'../../assests/community.png',
         formal:true
       },
       {
         id:2,
         title:'haha',
         image:'../../assests/image.png',
+        userName:'haha',
+        avatar:'../../assests/community.png',
         formal:false
       },
       {
         id:3,
         title:'haha',
         image:'../../assests/my.png',
+        userNme:'haha',
+        avatar:'../../assests/community.png',
         formal:true
       }
     ]

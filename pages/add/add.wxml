@@ -1,0 +1,14 @@
+<!--pages/add/add.wxml-->
+<view class="head">笔记<span class="back" bind:tap="back"></span></view>
+<view class="title">填写标题会有更多赞哦~</view>
+<view class="body">
+  <text >添加正文</text>
+  <view class="body-footer">
+    <span class="label">标签</span>
+   <span class="user">@用户</span>
+  </view>
+
+ 
+</view>
+<view class="pos"><image class="icon" src="../../assests/pos.svg"></image><text class="text">标记地点</text></view>
+<view class="public"><image class="icon" src="../../assests/lock.svg"></image><text class="text">公开可见</text></view>

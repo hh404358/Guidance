@@ -3,9 +3,9 @@
     "pages/home/home",
     "pages/my/my",
     "pages/community/community",
-    "pages/logs/logs",
-    "pages/search/search",
-    "pages/indoor-guidance/indoor-guidance"
+    "pages/search/search", 
+    "pages/indoor-guidance/indoor-guidance",
+    "pages/add/add"
   ],
   "window": {
     "navigationStyle": "custom",

@@ -1,2 +1,40 @@
 <!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<view class="head"><span class="back" bind:tap="back"></span>
+  搜索</view>
+<view class="input">
+  <image class="search" src="../../assests/search.svg">search</image>
+  <input  placeholder="标题文案" value="{{content}}" style="position:absolute;top:6px;"/>
+  <image class="camera" src="../../assests/camera.svg"></image>
+</view>
+<span class="btn" bind:tap="search">搜索</span>
+<view class="body">
+  <view class="history">
+  
+  <view class="title">历史记录
+    <image class="del" src="../../assests/del.png" bind:tap="clearAll"></image>
+  </view>
+  <view class="grid-body">
+    <span class="item" wx:for="{{history}}">{{item}}</span>
+    <span class="item" wx:if="{{more}}"> <span class="more" ></span></span>
+  </view>
+   
+  </view>
+  <view class="guess">
+  <view class="title">猜你想搜 <image class="refresh" bind:tap="refresh" src="../../assests/refresh.svg"></image>
+  <image class="see" bind:tap="see" src="../../assests/refresh.png"></image></view>
+  <!-- <view class="grid-body"> -->
+    <view class="guess-item" wx:for="{{guess}}"></view>
+  </view>
+  </view>
+  <view class="hot">
+    <view class="hot-head">
+      <image class="hot-icon" src="../../assests/mdi_hot.svg"></image>
+     <span class="hot-title">热门搜索</span>
+    </view>
+    
+    <view class="star"></view>
+    <view class="hot-item" wx:for="{{hot}}" wx:key="id">{{id}} {{item}}</view>
+    <image class="icon" src="../../assests/icon.svg"></image>
+  </view>
+<!-- </view> -->
+

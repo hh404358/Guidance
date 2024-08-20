@@ -8,26 +8,42 @@ page {
 .frame-container{
   background: #E3F7C8;
 }
-.head{
-  padding: 30px;
-  height: 10px;
-  line-height: 100px;
+
+.body{
+  z-index:0;
+}
+.block1{
+  position: absolute;
+  top:350px;
+  right:20px;
+  width: 35px;
+  height: 35px;
   text-align: center;
-  margin:auto;
-
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 23px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 35px ;
+}
+.block2{
+  position: absolute;
+  top:400px;
+  right:20px;
+  width: 35px;
+  height: 35px;
   text-align: center;
-
-  color: #000000;
-
+  background: #FFFFFF;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 35px ;
 
 }
-.mask{
-  z-index: 2;
-  height:100vh;
-  background: transparent #849174;
+.goback{
+  width: 30px;
+  height: 30px;
 }
+/* .mask{
+  z-index:4;
+  background-color: lightblue;
+} */
+
+

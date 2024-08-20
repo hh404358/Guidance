@@ -1,4 +1,21 @@
 <!--pages/my/my.wxml-->
-<container>
-  <text>hahaha</text>
-</container>
+
+<view class="my-container">
+  <view class="head">我的</view>
+  <image src="{{userInfo.avatarUrl}}" class="avatar"></image>
+  <span class="nickName" >{{userInfo.nickName}}</span>
+  <span class="profile">{{profile}}</span>
+  <span class="indendity">实名认证</span>
+  <span class="setBackground" bind:tap="setBackground">
+  设置背景
+  </span>
+  <span class="addFriend" bind:tap="addFriend">
+  添加好友
+  </span>
+  <view class="focus">
+    <span>{{focus}} {{fans}} {{myPost}}</span>
+    <span>关注 粉丝 我的发布</span>
+  </view>
+
+
+</view>

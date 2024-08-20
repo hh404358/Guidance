@@ -19,6 +19,21 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    add(){
+      console.log('add')
+      wx.navigateTo({
+        url: '../add/add',
+        success(){},
+        fail(e){
+          console.log(e)
+        }
+      })
+    },
+    toSearch(){
+      console.log('toSaerch')
+      wx.navigateTo({
+        url: '../search/search',
+      })
+    }
   }
 })

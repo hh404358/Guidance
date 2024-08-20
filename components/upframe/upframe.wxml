@@ -1,8 +1,10 @@
 <!--components/upframe/upframe.wxml-->
 <movable-area  class="frame-container">
   <movable-view x="{{x}}" y="{{y}} " class="movablebox" direction="vertical" out-of-bounds="true">
-  <view class="line">——</view>
-  <home-input class="input" ></home-input>
+    <view class="line">——</view>
+  
+    <view class="body">
+      <home-input class="input" ></home-input>
   <view class="text">"第一次"系列教程</view>
   <view  class="type">
   <view wx:if="{{!selected}}">
@@ -32,6 +34,8 @@
   </view>
   <view class="mask" wx:if="{{selected}}"></view>
   <post-frame class="box"></post-frame>
+    </view>
+ 
   </movable-view>
 </movable-area>
   
