@@ -45,5 +45,11 @@
         "selectedIconPath": "assests/my-s.png"
       }
     ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于Guidance小程序提供导航" 
+    }
+    
   }
 }

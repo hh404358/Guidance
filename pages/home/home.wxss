@@ -14,32 +14,36 @@ page {
 }
 .block1{
   position: absolute;
-  top:350px;
-  right:20px;
-  width: 35px;
-  height: 35px;
+  top:650rpx;
+  right:20rpx;
+  width: 70rpx;
+  height: 70rpx;
   text-align: center;
   background: #FFFFFF;
   border-radius: 10px;
-  font-size: 15px;
-  line-height: 35px ;
+  font-size: 30rpx;
+  line-height: 60rpx ;
 }
 .block2{
   position: absolute;
-  top:400px;
-  right:20px;
-  width: 35px;
-  height: 35px;
+  top:750rpx;
+  right:20rpx;
+  width: 70rpx;
+  height: 70rpx;
   text-align: center;
   background: #FFFFFF;
   border-radius: 10px;
-  font-size: 15px;
-  line-height: 35px ;
+  font-size: 20rpx;
+  line-height: 60px ;
 
 }
 .goback{
-  width: 30px;
-  height: 30px;
+  width: 60rpx;
+  height: 60rpx;
+}
+#map{
+  width: 100vw;
+  height:50vh;
 }
 /* .mask{
   z-index:4;

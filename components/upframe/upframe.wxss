@@ -36,22 +36,22 @@
 }
 .text{
 /* ”第一次“系列教程 */
-  margin:10px;
+  margin:20rpx;
   font-family: 'Romanesco';
   font-style: normal;
   font-weight: 400;
-  font-size: 17px;
-  line-height: 19px;
+  font-size: 34rpx;
+  line-height: 38rpx;
   color: #000000;
 }
 .label{
   display: block;
-  font-size: 15px;
+  font-size: 30rpx;
   float: left;
 }
 .label:hover{
   float: left;
-  font-size: 18px;
+  font-size: 36rpx;
   color: #000000;
 }
 .type{
@@ -70,26 +70,26 @@
 }
 .select{
   position: absolute;
-  right:10px;
-  margin-left: 20px;
-  margin-top:8px;
+  right:30rpx;
+  margin-left: 40rpx;
+  margin-top:16rpx;
   color:  #9F9F9F;
   transform: rotate(180deg);
-  width: 12px;
-  height: 12px;
+  width: 24rpx;
+  height: 24rpx;
   border-bottom: 1.5px solid #9F9F9F;
   border-right: 1.5px solid #9F9F9F;
   transform: rotate(45deg);
 }
 .select-reverse{
   position: absolute;
-  right:10px;
-  margin-left: 20px;
-  margin-top:6px;
+  right:30rpx;
+  margin-left: 40rpx;
+  margin-top:24rpx;
   color:  #9F9F9F;
   transform: rotate(180deg);
-  width: 12px;
-  height: 12px;
+  width: 24rpx;
+  height: 24rpx;
   border-bottom: 1.5px solid #9F9F9F;
   border-right: 1.5px solid #9F9F9F;
   transform: rotate(225deg);
@@ -107,35 +107,35 @@
 }
 .title{
   display: flex;
-  padding-left: 10px;
+  padding-left: 20rpx;
 }
 .main-title{
-  margin-top: 10px;
+  margin-top: 20rpx;
   font-family: 'Romanesco';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 16px;
+  font-size: 32rpx;
+  line-height: 32rpx;
   color: #000000;
 }
 .sub-title{
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
   font-family: 'Romanesco';
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 28rpx;
+  line-height: 28rpx;
   color: #9F9F9F;
 }
 .formal{
-  margin-top: 10px;
+  margin-top: 20rpx;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(50%, auto);
   /* grid-gap: 10px; */
   overflow: hidden;
-  gap: 5px;
+  gap: 10rpx;
 }
 .item{
   text-align: center;
@@ -143,10 +143,10 @@
   border-radius: 10%;
 }
 .informal{
-  margin-top: 10px;
+  margin-top: 20rpx;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(60%, auto);
-  grid-gap: 10px;
+  grid-gap: 20rpx;
   overflow: hidden;
 }

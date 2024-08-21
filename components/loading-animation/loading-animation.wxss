@@ -9,25 +9,25 @@
 }
 .header{
   border-radius: 50%;
-  width: 64px;
-  height: 64px;
+  width: 128rpx;
+  height: 128rpx;
   /* left: 163px; */
-  top: 322px;
+  top: 644rpx;
 }
 
 .title{
   /* Guidance */
   position: absolute;
-  width: 85px;
-  height: 23px;
+  width: 170rpx;
+  height: 26rpx;
   left: 49%;
   margin-top:100vh;
   transform: translateX(-50%);
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 40rpx;
+  line-height: 46rpx;
 
   color: #000000;
 
@@ -35,15 +35,15 @@
 }
 .plane{
   position: absolute;
-  width:20px;
-  height: 20px;
+  width:40rpx;
+  height: 40rpx;
   animation: rotatePlane 2s linear infinite;
 }
 @keyframes rotatePlane{
   from{
-    transform: rotate(0deg) translate(-42px,-42px)
+    transform: rotate(0deg) translate(-86rpx,86rpx)
   }
   to{
-    transform: rotate(360deg) translate(-42px,-42px)
+    transform: rotate(360deg) translate(-86rpx,86rpx)
   }
 }

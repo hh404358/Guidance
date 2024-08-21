@@ -13,37 +13,37 @@ page {
   position: relative;
   background: rgba(159, 159, 159, 0.15);
   border-radius: 9px;
-  margin-left: 100px;
-  margin-top: 9px;
+  margin-left: 200rpx;
+  margin-top: 18rpx;
   padding:auto;
-  font-size: 10px;
+  font-size: 20rpx;
   text-align: center;
-  line-height:18px;
-  width: 10vh;
-  height: 3vh;
+  line-height:36rpx;
+  width: 100rpx;
+  height: 40rpx;
 }
 
 .delete{
   position: absolute;
-  height: 15px;
-  width: 15px;
+  height: 30rpx;
+  width: 30rpx;
   /* top:30px; */
   
 }
 .label{
   display: block;
-  font-size: 15px;
+  font-size: 30rpx;
   float: left;
   color: #9F9F9F;
 }
 .label:hover{
   float: left;
-  font-size: 18px;
+  font-size: 36rpx;
   color: #000000;
 }
 .type{
-  margin-top: 10px;
-  margin-right: 10px;
+  margin-top: 20rpx;
+  margin-right: 20rpx;
   position: relative;
   display: flex;
   align-items: flex-start;
@@ -59,33 +59,33 @@ page {
 }
 .select{
   position: absolute;
-  right:10px;
-  margin-left: 20px;
-  margin-top:8px;
+  right:20rpx;
+  margin-left: 40rpx;
+  margin-top:16rpx;
   color:  #9F9F9F;
   transform: rotate(180deg);
-  width: 12px;
-  height: 12px;
+  width: 24rpx;
+  height: 24rpx;
   border-bottom: 1.5px solid #9F9F9F;
   border-right: 1.5px solid #9F9F9F;
   transform: rotate(45deg);
 }
 .select-reverse{
   position: absolute;
-  right:10px;
-  margin-left: 20px;
-  margin-top:16px;
+  right:35rpx;
+  margin-left: 30rpx;
+  margin-top:32rpx;
   color:  #9F9F9F;
   transform: rotate(180deg);
-  width: 12px;
-  height: 12px;
+  width: 24rpx;
+  height: 24rpx;
   border-bottom: 1.5px solid #9F9F9F;
   border-right: 1.5px solid #9F9F9F;
   transform: rotate(225deg);
 }
 .type-head{
-  line-height: 30px;
-  height: 30px;
+  line-height: 60rpx;
+  height: 60rpx;
 }
 .content{
   z-index: 4;
@@ -107,40 +107,40 @@ page {
   display: flex;
   flex-direction: column;
   background: #E3F7C8;
-  width: 100%;
+  width: 100vw;
   height: 60vh;
 }
 .title{
   display: flex;
-  padding-left: 10px;
+  padding-left: 20rpx;
 }
 .main-title{
-  margin-top: 10px;
+  margin-top: 20rpx;
   font-family: 'Romanesco';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 16px;
+  font-size: 32rpx;
+  line-height: 32rpx;
   color: #000000;
 }
 .sub-title{
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
   font-family: 'Romanesco';
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 28rpx;
+  line-height: 28rpx;
   color: #9F9F9F;
 }
 .formal{
-  margin-top:10px;
+  margin-top:20rpx;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(50%, auto);
   /* grid-gap: 10px; */
   overflow: hidden;
-  gap: 5px;
+  gap: 10px;
 }
 .item{
   text-align: center;
@@ -151,10 +151,10 @@ page {
   background: rgba(105, 181, 170, 0.32);
 }
 .informal{
-  margin-top: 10px;
+  margin-top: 20rpx;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(60%, auto);
-  grid-gap: 10px;
+  grid-gap: 20rpx;
   overflow: hidden;
 }

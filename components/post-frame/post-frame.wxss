@@ -1,12 +1,12 @@
 /* components/post-frame/post-frame.wxss */
 .post {
   position: relative;
-  margin-top:10px;
-  margin-right: 10px;
+  margin-top:20rpx;
+  margin-right: 20rpx;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: minmax(50%, auto);
-  grid-gap: 10px;
+  grid-gap: 15rpx;
   /* height:80%; */
 }
 .formal{
@@ -15,8 +15,8 @@
   left: 0%;
   width: 20%;
   height: 10%;
-  padding-top: 5px;
-  font-size: 12px;
+  padding-top: 10rpx;
+  font-size: 24rpx;
   background: rgba(0, 0, 0, 0.45);
   border-radius: 7.5px 0px 5px;
 
@@ -26,6 +26,7 @@
 .box{
   position: relative;
   height: 100%;
+  margin-left: 3rpx;
   border-radius: 7.5px;
   background-color: white;
   /* display: flex;
@@ -53,12 +54,10 @@
 }
 .image-container {
   /* flex:1; */
-  padding-top: 15px;
-  width: 25vh;
-  height:25vh;
-  /* display: flex; */
-  margin: auto;
-  left: 50%;
+  padding-top: 30rpx;
+  width: 350rpx;
+  height:350rpx;
+  margin-left: 10rpx;
   text-align: center;
 }
 .img{
@@ -70,28 +69,28 @@
   align-items: center;
 }
 .title{
-  padding-top: 15px;
+  padding-top: 30rpx;
   color: black;
   font-size: larger;
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 10rpx;
 }
 .userName{
   float: left;
-  margin-left:5px;
-  font-size: 14px;
+  margin-left:10rpx;
+  font-size: 28rpx;
   color:gray;
 }
 .avatar{
   float: left;
-  margin-left: 10px;
+  margin-left: 20rpx;
   border-radius: 100%;
-  width: 20px;
-  height: 20px;
+  width: 40rpx;
+  height: 40rpx;
 }
 .thumb{
-  width: 20px;
-  height: 20px;
+  width: 40rpx;
+  height: 40rpx;
   float: right;
 }
 

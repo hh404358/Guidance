@@ -7,7 +7,7 @@
 .rectangle{
   /* position:relative; */
   display: flex;
-  width: 58vh;
+  width: 100vw;
   height: 6vh;
   padding-top: 2vh;
   background: #FFFFFF; 
@@ -18,14 +18,14 @@
 
 /* 搜索飞机/动车班次或目的地 */
 .font{
-  padding-top: 2px;
-  padding-bottom: 10px;
-  margin-left: 10px;
+  padding-top: 2rpx;
+  padding-bottom: 10rpx;
+  margin-left: 10rpx;
   font-family: 'Romanesco';
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
+  font-size: 28rpx;
+  line-height: 28rpx;
   color: #9F9F9F;
 }
 
@@ -34,10 +34,9 @@
 /* Vector */
 
 .vector{
-  margin-left: 1vh;
-  width: 8vh;
-  height: 8vh;
-  left: 341px;
+  margin-left: 8rpx;
+  width: 100rpx;
+  height: 100rpx;
   border-radius: 50%;
   background: #B8C5DC;
 }
@@ -51,7 +50,7 @@
 
 .iconfont {
   font-family: "iconfont" !important;
-  font-size: 28px;
+  font-size: 60rpx;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -61,13 +60,13 @@
 
 }
 .icon-saoyisao{
-  padding-left: 80px;
+  padding-left: 220rpx;
 }
 .icon-saoyisao:before {
   content: "\e891";
 }
 .icon-yuyin_o{
-  margin-left: 10px;
+  margin-left: 20rpx;
 }
 .icon-yuyin_o:before {
   content: "\eb6c";

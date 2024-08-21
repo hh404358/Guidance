@@ -12,17 +12,17 @@
 
 } 
 .head{
-  padding: 30px;
-  height: 10px;
-  line-height: 100px;
+  padding: 66rpx;
+  height: 20rpx;
+  line-height: 200rpx;
   text-align: center;
   margin:auto;
 
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
-  line-height: 23px;
+  font-size: 40rpx;
+  line-height: 46rpx;
   text-align: center;
 
   color: #000000;
