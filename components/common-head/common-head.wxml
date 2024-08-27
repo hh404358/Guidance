@@ -1,0 +1,4 @@
+<!--components/common-head/common-head.wxml-->
+<view class="head"><span class="back" bind:tap="back"></span>
+  <slot></slot>
+  </view>

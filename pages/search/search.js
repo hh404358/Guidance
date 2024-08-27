@@ -10,28 +10,31 @@ Page({
       '11','22','33','44',
       '55','hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh',
       'hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh',
-      'hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh',
+      'hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh',
     ],
-    more:false,
-    hot:[
+    guess:[
       'hhhhhhhhhhhhhhhh',
       '11','22','33','44',
       '55','hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh',
       'hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh',
-      'hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh',
-    ]
+      'hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh','hhhhhhhhhhhhhhhh',
+    ],
+    more:false,
+    //只要九个
+    hot:[
+      'hhhhhhhhhhhhhhhh',
+      '11','22','33','44',
+      '55','hhhhhhhhhhhhhhhh',
+    ],
+    see:true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    if(!this.data.more){
-      console.log(this.data.history)
-      this.setData({
-        history:[history[1],history[2],history[3],history[4]]
-      })
-    }
+    this.fetchData();
+    this.getGuess();
   },
 
   /**
@@ -82,6 +85,16 @@ Page({
   onShareAppMessage() {
 
   },
+  fetchData(){
+    wx.request({
+
+    })
+  },
+  getGuess(){
+    wx.request({
+      url: 'url',
+    })
+  },
   back(){
     wx.switchTab({
       url: '/pages/community/community',
@@ -93,5 +106,20 @@ Page({
       history : []
     })
     console.log(this.data.history)
+  },
+  handleShowMore(){
+    const more = this.data.more;
+    this.setData({
+      more:!more
+    })
+  },
+  handleRefresh(){
+    this.getGuess();
+  },
+  handleSee(){
+    const see = this.data.see;
+    this.setData({
+      see:!see
+    })
   }
 })

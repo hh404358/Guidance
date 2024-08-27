@@ -13,12 +13,15 @@
   position: absolute;
   top:0;
   left: 0%;
-  width: 20%;
-  height: 10%;
+  width: 44px;
+  height: 17px;
   padding-top: 10rpx;
-  font-size: 24rpx;
+  font-size: 12px;
+  line-height: 12px;
   background: rgba(0, 0, 0, 0.45);
   border-radius: 7.5px 0px 5px;
+  color: white;
+  text-align: center;
 
 
 
@@ -28,30 +31,14 @@
   height: 100%;
   margin-left: 3rpx;
   border-radius: 7.5px;
-  background-color: white;
-  /* display: flex;
-  flex-wrap: wrap;
-  padding-right: 20px ; */
-  /* float: 200px; */
+  /* background-color: white; */
+  border-radius: 8px 8px 0px 0px;
+
 }
 .post .box {
   transition: box-shadow 0.3s; /* 平滑过渡效果 */
 }
 
-.post .box:hover {
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* 悬浮时的阴影效果 */
-}
-
-/* 如果你想要为每个 post 添加不同的悬浮效果，可以使用 :nth-child 选择器 */
-.post .box:nth-child(odd):hover {
-  flex:1;
-  box-shadow: 0 8px 16px #db767680; /* 奇数项的悬浮效果 */
-}
-
-.post .box:nth-child(even):hover {
-  flex:1;
-  box-shadow: 0 8px 16px #70fd7080; /* 偶数项的悬浮效果 */
-}
 .image-container {
   /* flex:1; */
   padding-top: 30rpx;

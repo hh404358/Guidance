@@ -23,10 +23,16 @@ Component({
    */
   methods: {
     handleSearch(){
-      console.log('click')
       wx.navigateTo({
         url: '/pages/search/search.js',
       })
+    },
+    handleScan(){
+      console.log('scan')
+      wx.navigateTo({
+        url: '/pages/scan/scan',
+      })
     }
   },
+  
 })

@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "post-frame":"../../components/post-frame/post-frame"
+    "post-frame":"../../components/post-frame/post-frame",
+    "l-mask":"../../miniprogram_npm/lin-ui/mask"
   }
 }

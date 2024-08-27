@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "common-head":"../../components/common-head/common-head" ,
+    "xr":"../../components/xr/xr" 
+  }
 }

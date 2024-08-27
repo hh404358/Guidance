@@ -1,7 +1,11 @@
 <view class = "head">
 
-  <image src="/assests/image.png" class="header"></image>
-  <image src="/assests/Vector.png" class="plane"></image>
-
+  <!-- <image src="/assests/image.png" class="header"></image>
+  <image src="/assests/Vector.png" class="plane"></image> -->
+<view class="earth-container">
+  <image class="earth" src="/assests/image.png" mode="aspectFit"></image>
+  <canvas canvas-id="flightPathCanvas" style="position: absolute;"></canvas>
+  <image class="airplane" src="/assests/Vector.png" mode="aspectFit" style="{{airplaneStyle}}" ></image>
+</view>
 <view class="title">Guidance</view>
 </view>

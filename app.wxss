@@ -13,8 +13,7 @@
 } 
 .head{
   padding: 66rpx;
-  height: 20rpx;
-  line-height: 200rpx;
+  height: 40rpx;
   text-align: center;
   margin:auto;
 
@@ -22,10 +21,7 @@
   font-style: normal;
   font-weight: 600;
   font-size: 40rpx;
-  line-height: 46rpx;
+  line-height: 100rpx;
   text-align: center;
-
   color: #000000;
-
-
 }

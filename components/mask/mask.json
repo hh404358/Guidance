@@ -1,0 +1,18 @@
+{
+  "component": true,
+  "usingComponents": {},
+  "properties": {
+    "z": {
+      "type": "number",
+      "value": 1000
+    },
+    "bottom": {
+      "type": "string",
+      "value": "0"
+    },
+    "top": {
+      "type": "string",
+      "value": "0"
+    }
+  }
+}

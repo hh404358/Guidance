@@ -16,7 +16,7 @@
     </view>
     <view class="formal">
       <span wx:for="{{formal}}" wx:key="id" class="item">{{item.name}} 
-      <image src="../../assests/delete.png" class="delete" wx:if="{{edit}}"></image>
+      <image src="../../assests/delete.png" class="delete" wx:if="{{edit}}" bind:tap="handleDelete"></image>
       </span>
     </view>
     <view class="title">
@@ -29,7 +29,8 @@
      
     </view>
     
-  <span class="select" bind:tap="handleSelect"></span>
+    <span class="{{selected?'select-reverse':'select'}}" bind:tap="handleSelect"></span>
   </view>
+  <view class="mask" wx:if="{{selected}}"></view>
   <post-frame ></post-frame>
 </view>

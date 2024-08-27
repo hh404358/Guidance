@@ -1,12 +1,14 @@
 /* components/upframe/upframe.wxss */
 .frame-container{
+  z-index:2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height:176vh;
+  height:100vh;
   color: #aaa;
+  background-color: transparent;
 }
 
 .line{
@@ -15,22 +17,25 @@
 }
 .input{
   padding-top: 0px;
-  margin-bottom: 5vh;
+  left: 6px;
+  z-index:5;
 }
 .movablebox{
   /* padding-top: 3vh; */
   /* padding-left: 4vh; */
   position: relative;
   padding-left: 1%;
+  /* top:10px; */
+  top:-25px;
   width:100%;
   height:100vh;
   overflow: hidden;
-  background: transparent;
+  background: #E3F7C8;
  
 }
 .body{
   position: relative;
-  top:2vh;
+  top:26px;
   height:80vh;
   background: #E3F7C8;
 }

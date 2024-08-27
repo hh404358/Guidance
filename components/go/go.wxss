@@ -1,0 +1,11 @@
+/* components/go/go.wxss */
+.go{
+  color:  #9F9F9F;
+  transform: rotate(0deg);
+  width: 20rpx;
+  height: 20rpx;
+  border-bottom: 1.5px solid #9F9F9F;
+  border-right: 1.5px solid #9F9F9F;
+  transform: rotate(-45deg);
+
+}

@@ -7,7 +7,7 @@ page {
   overflow: hidden;
 }
 .frame-container{
-  margin-top: 60px;
+  margin-top: 140rpx;
 }
 .btn{
   position: relative;
@@ -88,7 +88,7 @@ page {
   height: 60rpx;
 }
 .content{
-  z-index: 4;
+  z-index: 5;
   display: none;
 }
 .select:hover .content{
@@ -157,4 +157,16 @@ page {
   grid-auto-rows: minmax(60%, auto);
   grid-gap: 20rpx;
   overflow: hidden;
+}
+.mask{
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 230rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

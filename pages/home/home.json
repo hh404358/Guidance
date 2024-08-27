@@ -2,7 +2,9 @@
   "usingComponents": {
     "upframe":"../../components/upframe/upframe",
     "post-frame":"../../components/post-frame/post-frame",
-    "head":"../../components/head/head"
+    "head":"../../components/head/head",
+    "l-mask":"../../miniprogram_npm/lin-ui/mask",
+    "mask":"../../components/mask/mask"
    
   }
 }
