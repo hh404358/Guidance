@@ -1,21 +1,78 @@
 <!--pages/my/my.wxml-->
-
-<view class="my-container">
-  <view class="head">我的</view>
+<view class="header">我的</view>
+<view class="container" style="background-image:url({{bg}}) ; background-size: cover;background-position: center;background-repeat: no-repeat">
   <image src="{{userInfo.avatarUrl}}" class="avatar"></image>
   <span class="nickName" >{{userInfo.nickName}}</span>
   <span class="profile">{{profile}}</span>
   <span class="indendity">实名认证</span>
   <span class="setBackground" bind:tap="setBackground">
-  设置背景
-  </span>
-  <span class="addFriend" bind:tap="addFriend">
-  添加好友
+  <image src="../../assests/picture.svg" style="width: 15px;height: 15px;position: absolute;top:3px;left:4px"></image>
+  <span style="position: absolute;top:0px;left:24px">设置背景</span>
   </span>
   <view class="focus">
-    <span>{{focus}} {{fans}} {{myPost}}</span>
-    <span>关注 粉丝 我的发布</span>
+  <view>{{focus}}</view><view>{{fans}}</view>
+  <view> {{myPost}}</view><view bind:tap="showFocus">关注 </view>
+  <view >粉丝</view><view>笔记</view>
   </view>
+  <view style="position: absolute;top:298px;display: flex;">
+  <view class="item" bind:tap="handleShow1">获赞和收藏</view><view class="item" bind:tap="handleShow2">有人@我</view><view class="item" bind:tap="handleShow3">浏览记录</view>  
+  <view class="dialog1" wx:if="{{show1}}">
+  <view class="dialog-title">获赞与收藏</view>
+  <view style="display: flex;margin-top:24px"><image src="../../assests//my-like.svg" mode="aspectFit" style="width: 30px;height: 30px;margin-left:31px;margin-right: 7px;"></image><view class="text">当前获得点赞数</view><view class="num">{{likeNum}}</view></view>
+  <view style="display: flex;margin-top:15px"><image src="../../assests/my-collect.svg" mode="aspectFit" class="img" style="margin-left:31px;margin-right: 7px;"></image><view class="text">当前获得收藏数</view><view class="num">{{collectNum}}</view></view>
+  <button class="know" bind:tap="handleShow1">我知道了</button>
+  </view>
+  
+  <view class="dialog2" wx:if="{{show2}}">
+  <view class="dialog-title">有人@我</view>
+  <view wx:for="{{mentionList}}" class="dialog-item">
+    <image src="{{item.avatar}}" class="img" style=" border-radius: 50%;margin-left: 6px;"></image>
+    <view style="display: flex;flex-direction: column;margin-left:5px"><view style="font-size: 13px;">{{item.userName}}</view><view style="font-style: normal;font-weight: 400;font-size: 9px;line-height: 12px;letter-spacing: 0.07em;color: #666968;">在{{item.place}}中@了你</view>
+    </view>
+    <image src="{{item.postImg}}"  style="position: absolute;right:12px ;width:20px;height:20px;margin-top: 5px;"></image>
+  </view>
+  </view>
+  <view class="dialog3" wx:if="{{show3}}">
+    <view class="dialog-title">浏览记录</view>
+    <view wx:for="{{historyList}}" wx:key="index" class="dialog-item">
+  <image src="{{item.postImg}}" mode="aspectFit" class="img"></image>
+  <view style="font-size: 13px;">{{item.title}}</view>
+    </view>
+  </view>
+</view>
+<view class="movablebox" style="top:{{offsetY}}px" wx:if="{{!isSearch}}">
+  <view class="head" bind:touchstart="onTouchStart" bind:touchmove="onTouchMove" bind:touchend="onTouchEnd" >
+  <view style="position:absolute;left:16px;width:161px;color: #9F9F9F;font-weight:normal;background: url('{{isNote?'../../assests/note-bg.svg':''}}')"  bind:tap="toNote">我的笔记</view><view style="position:absolute;left:180px;width:161px;color: #9F9F9F;font-weight:normal;background;: url('{{!isNote?'../../assests/collect-bg.svg':''}}')" bind:tap="toMyCollect">我的收藏</view>
+  <image src="../../assests/search.svg" style="width:20px;height:20px;position:absolute;right:17px;top:16px;" bind:tap="handleSearch"></image>
+  </view>
+  <view style="background: #E3F7C8;position:absolute;top:40px;left:0;width: 100vw;z-index:3"><post-frame></post-frame>
+  </view>
+    
+  </view>
+
+
+
+  <view class="movablebox" style="top:{{offsetY}}px" wx:else>
+  <view class="head" bind:touchstart="onTouchStart" bind:touchmove="onTouchMove" bind:touchend="onTouchEnd" >
+  <view class="input-frame">
+    <view class="input">
+    <image src="../../assests/search.svg" style="width:20px;height:20px;position:absolute;left:10px;top:10px;" bind:tap="handleSearch"></image>
+  <input placeholder="搜索笔记或用户" value="{{value}}" style="position: absolute;top:8px;left:0px;font-size: 17px;text-align: center;line-height: 37px;font-size: 17px;font-weight: lighter;"></input>
+ 
+  </view>
+  <view style="position: absolute;right:21px;top:21px;font-style: normal;font-weight:400;font-size: 17px;line-height: 19px;color: #9F9F9F;">取消</view>
+  </view>
+  <view class="classfy">
+  <view style="color: {{isCollect?'black':'#9F9F9F'}};border-bottom:solid {{isCollect?' 1.5px #56ACA6 ':'0px'}}" bind:tap="toCollect">我的收藏
+  </view>
+  <view style="color: {{isCollect?'#9F9F9F':'black'}};border-bottom:solid {{!isCollect?' 1.5px #56ACA6 ':'0px'}}" bind:tap="toHistory">浏览历史</view>
+  </view>
+  </view>
+  <view style="position:absolute;top:95px;left:0;width: 100vw;z-index:3"><post-frame></post-frame>
+  </view>
+    
+  </view>
+  
 
 
 </view>

@@ -1,0 +1,170 @@
+/* pages/note/note.wxss */
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #E3F7C8;
+  overflow-x:hidden;
+}
+/* 发布笔记后查看 */
+/* 轮播图 */
+.swiper {
+  width: 100%;
+  height: 35vh; /* 根据需要调整高度 */
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+.num{
+position: fixed;
+width: 60rpx;
+height: 20px;
+left: 680rpx;
+top: 50rpx;
+color: white;
+text-align: center;
+font-size: 12px;
+background: rgba(84, 84, 84, 0.8);
+border-radius: 15px;
+
+}
+
+.focus{
+  position: relative;
+  left:100px;
+  width: 150rpx;
+  height: 20px;
+  background: #F8B827;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  line-height: 20px;
+  font-size: 24rpx;
+  
+}
+.tag-item{
+  width: fit-content;
+  height: 54rpx;
+  background: rgba(217, 217, 217, 0.5);
+  border-radius: 39px;
+
+}
+.show-title{
+  margin-left: 20rpx;
+  height:auto;
+  width: 100%;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+
+
+}
+.show-body{
+  margin-left: 20rpx;
+  height:auto;
+  width: 100%;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 200%;
+  /* or 28px */
+  letter-spacing: 0.07em;
+
+  color: #000000;
+
+
+}
+.label{
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 200%;
+/* or 28px */
+letter-spacing: 0.07em;
+
+color: #265AB4;
+
+
+}
+.commentNum{
+  margin-left: 20rpx;
+  font-family: 'Roboto';
+  margin-bottom: 10px;
+font-style: normal;
+font-weight: 400;
+font-size: 11px;
+line-height: 13px;
+color: #9F9F9F;
+}
+.footer{
+  z-index:3;
+  position: fixed;
+  padding-bottom: 10px;
+  bottom:0px;
+  width:100%;
+  height:50px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #E3F7C8;
+  overflow: hidden;
+}
+.footer .line{
+position: fixed;
+width: 366.01px;
+height: 0px;
+left: 13px;
+bottom: 60px;
+border: 1px solid rgba(159, 159, 159, 0.15);
+
+}
+.footer .comment{
+  display: flex;
+  align-items: center;
+  position: relative;
+  top:6px;
+  left:18px;
+  width: 161px;
+  height: 39px;
+  background: #CFDEBB;
+  border-radius: 24.5px;
+
+}
+.img{
+  width: 25px;
+  height: 25px;
+}
+.commentList{
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+.comment-item{
+  display: flex;
+}
+.avatar{
+  width:30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.userName{
+ font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 12px;
+line-height: 14px;
+margin-bottom: 4px;
+color: #A7AAA4;
+
+
+}
+
+
+

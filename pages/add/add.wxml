@@ -1,6 +1,6 @@
 <!--pages/add/add.wxml-->
 <common-head>笔记</common-head>
-<view wx:if="{{!sendNotes}}">
+<view >
 <view class="title">
  <!-- 图片列表 -->
  <view class="image-list">
@@ -16,9 +16,6 @@
     
     </view> 
   </view>
-<!-- <view class = "block">
-<image src="../../assests/album.svg" class="img" bind:tap="onUpload" ></image><view style="padding-bottom:20rpx;margin: auto;">照片/视频</view>
-</view> -->
 <input style="margin-left: 20rpx;font-size: 30rpx;" placeholder="填写标题会有更多赞哦~" value="{{title}}"></input>
 </view>
 <!-- 正文 -->
@@ -90,41 +87,6 @@
 </view>
 <view class="save" wx:if="{{save}}" >保存草稿成功！</view>
 
-<button class="send" bind:tap="handleSend">发布笔记</button>
+<view class="send" bind:tap="handleSend" >发布笔记</view>
 
-</view>
-<view wx:else>
-  <swiper
-  indicator-dots="true"
-  autoplay="true"
-  interval="5000"
-  duration="1000"
-  circular="true"
-  class="swiper"
-  indicator-active-color="#F8B827"
->
-  <swiper-item wx:for="{{uploadedImages}}" wx:key="index">
-  <view class="num">{{index+1+'/'+uploadedImages.length}}</view>
-    <image src="{{item}}" class="slide-image" mode="aspectFill" />
-  </swiper-item>
-</swiper>
-<view style="display: flex;flex-direction:row;margin-top: 10rpx;height: 70rpx;align-items: center;"><image src="../../assests/share.svg" style="position: relative;left:20rpx;width:60rpx;height:60rpx;"></image>
-<text style="position: relative;left:20rpx;">{{name}}</text><view class="focus" bind:tap="handleFocus">+ 关注</view><image src="../../assests/share.svg" style="position:relative;left:230rpx;width:60rpx; height: 60rpx;"></image>
-</view>
-<view class="show-title">{{title}}111</view>
-<view class="show-body">{{body}}222222</view>
-<view style="display: flex; margin:20rpx">{{now}} {{position}} <go style="transform: {{!isTagsVisible?'rotate(90deg)':'rotate(270deg)'}};position: fixed;right:20rpx;" bind:tap="handleShowTags"></go></view>
-<view style="display: flex;">
-<view wx:if="{{isTagsVisible}}" wx:for="{{selectedTags}}" wx:key="index" class="tag-item">{{item}}</view>
-</view>
-<view class="comment">
-<view class="commentNum">共{{commentNum}}条评论</view>
-</view>
-<view class="footer">
-<view class="comment"><image src="../../assests/write.svg" class="img"></image>
-<input placeholder="说点什么..."></input><view>@</view><image src="../../assests/album.svg" class="img"></image></view>
-</view>
-<image src="../../assests/like.svg" class="img"></image>{{likeNum}}
-<image src="../../assests/collect.svg" class="img"></image>{{collectNum}}
-<image src="../../assests/comment.svg" class="img"></image>{{commentNum}}
 </view>

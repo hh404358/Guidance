@@ -1,13 +1,19 @@
 {
   "pages": [
-    
-    "pages/home/home",
+    "pages/info/info",
     "pages/my/my",
+    "pages/myNote/myNote",
+    "pages/note/note",
+    "pages/home/home",
+    
+    "pages/focus/focus",
+    
     "pages/community/community",
     "pages/search/search",
     "pages/indoor-guidance/indoor-guidance",
     "pages/add/add",
-    "pages/scan/scan"
+    "pages/scan/scan",
+    "pages/author/author"
   ],
   "window": {
     "navigationStyle": "custom",

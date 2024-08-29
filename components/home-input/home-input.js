@@ -16,6 +16,7 @@ Component({
   data: {
     value:'',
     avatar: avatarUrl?avatarUrl:defaultAvatarUrl,
+    voiceFile:''
   },
 
   /**
@@ -23,9 +24,10 @@ Component({
    */
   methods: {
     handleSearch(){
-      wx.navigateTo({
-        url: '/pages/search/search.js',
-      })
+
+      // wx.navigateTo({
+      //   url: '/pages/search/search',
+      // })
     },
     handleScan(){
       console.log('scan')
@@ -34,5 +36,27 @@ Component({
       })
     }
   },
+  handleVoice(){
+    const tempFilePath = this.data.voiceFile
+    wx.startRecord({
+      success (res) {
+        tempFilePath = res.tempFilePath
+      }
+    })
+    
+  },
+  stopVoice(){
+    wx.stopRecord() // 结束录音
+    const tempFilePath = this.data.voiceFile
+    //发送给后端接收后端信息
+
+  },
+  handleMy(){
+    console.log('tabMy')
+    wx.switchTab({
+      url: '../../pages/my/my',
+    })
+  }
+
   
 })

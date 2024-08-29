@@ -1,5 +1,7 @@
 /* components/common-head/common-head.wxss */
 .head{
+  /* position: absolute; */
+  top:20px;
   padding: 66rpx;
   height: 40rpx;
   text-align: center;

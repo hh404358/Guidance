@@ -8,8 +8,6 @@ Page({
     transitionCompleted:false,
     showTransition:true,
     current:true,
-    startY:'',
-    offsetY:411,
     // 关键是这里要写与map组件id对应的！select用.或者#都一样
     context : wx.createMapContext('map', wx.createSelectorQuery().select('#map')),
     longitude:119.19245 ,
@@ -66,29 +64,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.startTimer();
-    wx.hideTabBar();
+    wx.hideTabBar()
   },
   startTimer(){
     let lo = null;
     let la= null;
-    this.timer = setInterval(()=>{
+    this.timer = setTimeout(()=>{
       const context = this.data.context
       const current = this.data.current
       if(context){
         context.getCenterLocation({
           success(res){
-            lo = res.longitude;
-            la =  res.latitude;
-          }
-        })
-        context.moveToLocation()
-        context.getCenterLocation({
-          success(res){
             if(res.longitude != lo || res.latitude != la){
-              
-                current = false
-              
+              this.data.current = false
+                // this.setData({
+                //   current:false
+                // })
               console.log('not before pos')
             }
           }
@@ -111,63 +102,36 @@ Page({
       //使用这种方式无法实现页面动态更新
       // this.transitionCompleted = true;   
     }, 3000); // 调整动画执行的时间
-    
+   
     // 这里页面初始化的时候调用
-    const context = this.data.context; 
-    //TODO:申请定位，获取定位的地图 接口
-    context.moveToLocation({})
-    let latitude = this.data.latitude;
-    let longitude = this.data.longitude;
-    context.getCenterLocation({
-      success(res){
-        this.setData({
-          latitude : res.latitude,
-          longitude : res.longitude
-        })
+    // const context = this.data.context; 
+    // //TODO:申请定位，获取定位的地图 接口
+    // context.moveToLocation({})
+    // let latitude = this.data.latitude;
+    // let longitude = this.data.longitude;
+    // context.getCenterLocation({
+    //   success(res){
+    //     this.setData({
+    //       latitude : res.latitude,
+    //       longitude : res.longitude
+    //     })
           
-      },
-    })
+    //   },
+    // })
     // 必须要真机调试的时候才能看到标记点
     //标记当前位置
-    const marker = {
-      id:1,
-      latitude:latitude,
-      longitude:longitude,
-      width:30,
-      height:30
-    }
-    context.addMarkers({
-      markers:[marker]
-    })
+    // const marker = {
+    //   id:1,
+    //   latitude:latitude,
+    //   longitude:longitude,
+    //   width:30,
+    //   height:30
+    // }
+    // context.addMarkers({
+    //   markers:[marker]
+    // })
     
    
-  },
-  onTouchStart: function(e) {
-    // 记录触摸开始时的位置
-    this.startY = e.touches[0].clientY;
-  },
-  onTouchMove: function(e) {
-    const that = this;
-    const deltaY = e.touches[0].clientY - that.startY;
-
-    // 限制拉动区域只能在特定范围内移动
-    const maxOffsetY = 200; // 定义最大偏移量
-    const newOffsetY = Math.min(deltaY, that.startY-maxOffsetY);
-
-    const offsetY = this.data.offsetY;
-    // 更新偏移量
-    that.setData({
-      offsetY: newOffsetY
-    });
-    console.log(this.startY,newOffsetY,this.data.offsetY)
-  },
-  onTouchEnd: function() {
-    const that = this;
-    // 弹性回弹效果
-    const resetOffsetY = 0; // 定义回弹到的位置
-    that.setData({
-      offsetY: resetOffsetY
-    });
   },
   handleSelect(){
     const selected = this.data.selected
@@ -180,7 +144,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-   
+    // const context = this.data.context;
+    // const longitude = this.data.longitude;
+    // const latitude = this.data.latitude;
+    // console.log(this)
+    // if(context){
+    //   context.getCenterLocation({
+    //     success(res){
+    //       longitude = res.longitude;
+    //       latitude =  res.latitude;
+    //       console.log(res)
+    //     }
+    //   })
+    // }
+    // this.startTimer();
   },
 
   /**
@@ -227,20 +204,19 @@ Page({
     })
   },
   goBack(){ 
-    let current = this.data.current;
+    const current = this.data.current;
     this.setData({
-      current: !current
+      current: true
     })
-    let context = this.data.context;
+    const context = this.data.context;
     //回到原始定位点  
-    context.moveToLocation({
-      success(){
-        console.log('s')
-      },
-      complete(){
-        console.log('goback')
-      }
-    })
-    //TODO:监听页面位置移动
+    context.moveToLocation({ })
+  },
+  handleMove(){
+    console.log('move')
+    const current = this.data.current;
+    this.setData({
+      current: false
+    }) 
   }
 })

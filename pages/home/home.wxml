@@ -1,80 +1,16 @@
-<!--pages/home/home.wxml-->
-<!-- 
-<loading-animation wx:if="{{showTransition}}" :class="{active:transitionCompleted}" ></loading-animation> -->
-<!-- <view  class="frame-container" style="padding-top: {{pageTopHeight}}px;">
-  <view class="head" >
-    Guidance
-  </view> 
-  <view class="body">
-
-    <map enable-3D id="map" longitude="{{logitude}}" latitude="{{latitude}}" show-location="true" >
-    <maker longitude="119.19245" latitude="26.056212" ></maker>
-    </map>
-
-    <view class="block1" bind:tap="goIndoor">AR</view>
-    <view class="block2" bind:tap="goBack">
-      <image src="{{current?'../../assests/current.svg':'../../assests/goback.svg'}}" class="goback"></image>
-    </view>
-    <upframe style="z-index: 10;"> </upframe>
-  </view> -->
-
-
-
-
-
   <loading-animation wx:if="{{!transitionCompleted}}" :class="{active:transitionCompleted}" style="z-index:100"></loading-animation>
-  
   <view  class="frame-container" wx:else>
     <view class="head" >
     Guidance
   </view> 
-  <map enable-3D id="map" longitude="{{logitude}}" latitude="{{latitude}}" show-location="true" >
+  <map enable-3D id="map" longitude="{{logitude}}" latitude="{{latitude}}" show-location="true" bind:touchmove="handleMove">
     <maker longitude="119.19245" latitude="26.056212" ></maker>
     <view class="map-block1" bind:tap="goIndoor">AR</view>
-    <view class="map-block2" bind:tap="goBack"><image src="{{current?'../../assests/current.svg':'../../assests/goback.svg'}}" class="goback"></image>
-    </view>
+    <view class="map-block2" bind:tap="goBack"><image src="{{current?'../../assests/current.svg':'../../assests/goback.svg'}}" style="width: 35px;height: 35px;"></image></view>
     </map>
-  <view class="body" bind:touchstart="onTouchStart"  bind:touchmove="onTouchMove" bind:touchend="onTouchEnd" style="top:{{offsetY}}">
+  <view class="body" >
       <upframe style="z-index: 3;"> </upframe>
-    
-  <!-- <view class="movablebox"   style="transform: translateY({{offsetY}}px)"  >
-    <view class="line">——</view>
-      <home-input class="input" ></home-input>
-  <view class="text">"第一次"系列教程</view>
-  <view  class="type">
-  <view wx:if="{{!selected}}">
-    <span wx:for="{{labels}}" wx:key="id" style="margin-left: 15px;" class="label" >
-    {{item.name}}
-    </span>
-  </view>
-    <view class="type-content" wx:else>
-    <view class="title">
-    <span class="main-title">官方频道</span>
-    <span class="sub-title">点击进入频道</span>
-    <span class="select-reverse" bind:tap="handleSelect"></span>
-    </view>
-    <view class="formal">
-      <span wx:for="{{formal}}" wx:key="id" class="item">{{item.name}} </span>
-    </view>
-    <view class="title">
-    <span class="main-title">大众频道</span>
-    <span class="sub-title">点击进入频道</span>
-    </view>
-    <view class="informal">
-      <span wx:for="{{informal}}" wx:key="id" class="item">{{item.name}}</span>
-    </view>
-     
-    </view>
-  <span class="{{selected?'select-reverse':'select'}}" bind:tap="handleSelect"></span>
-  </view>
-  <view>
-  <view class="mask" wx:if="{{selected}}"></view>
-  <post-frame style="margin-top: 100rpx;"></post-frame>
-  </view>
-
-    
  
-  </view> -->
   </view>
 </view>
 

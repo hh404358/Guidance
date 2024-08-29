@@ -22,7 +22,8 @@ page {
   width: 70rpx;
   height: 70rpx;
   text-align: center;
-  background: #FFFFFF;
+  background: linear-gradient(357.78deg, #FFCB2B 98.2%, #FFF3D7 1.8%);
+  box-shadow: 2.85751e-16px 4.66667px 9.33333px rgba(47, 36, 8, 0.233), inset -8.76303e-17px -1.43111px 1.43111px #BF921F, inset 8.76303e-17px 1.43111px 1.43111px #FFD22C;
   border-radius: 10px;
   font-size: 30rpx;
   line-height: 60rpx ;
@@ -30,180 +31,12 @@ page {
 .map-block2{
   z-index:1;
   position: absolute;
-  bottom:162px;
+  top:330px;
   right:20rpx;
   width: 70rpx;
   height: 70rpx;
   text-align: center;
-  background: #FFFFFF;
-  border-radius: 10px;
+
   font-size: 20rpx;
   line-height: 60px ;
-
-}
-
-.line{
-  color:#aaa;
-  transform: translateX(45%);
-}
-.input{
-  padding-top: 0px;
-  margin-bottom: 5vh;
-}
-.movablebox{
-  /* padding-top: 3vh; */
-  /* padding-left: 4vh; */
-  position: absolute;
-  top:0;
-  left: 0;
-  /* padding-left: 1%; */
-  width:100vw;
-  /* margin-left: 28rpx; */
-  height:100vh;
-  overflow: hidden;
-  background:  #E3F7C8;
- 
-}
-.body{
-  position: fixed;
-  /* top:2vh; */
-  /* height:80vh; */
-  /* background: #E3F7C8; */
-  z-index:0;
-  top:411px;
-  height:100vh;
-}
-.text{
-/* ”第一次“系列教程 */
-  margin:20rpx;
-  font-family: 'Romanesco';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 34rpx;
-  line-height: 38rpx;
-  color: #000000;
-}
-.label{
-  display: block;
-  font-size: 30rpx;
-  float: left;
-}
-.label:hover{
-  float: left;
-  font-size: 36rpx;
-  color: #000000;
-}
-.type{
- margin:0;
-  position: relative;
-  /* display: inline-block; */
-  width:100%;
-  display: flex;
-  align-items: flex-start;
-  box-sizing: border-box;
-  line-height: 6vh;
-  /* border:  #9F9F9F; */
-  border-top: 0.001px solid #9F9F9F;
-  border-bottom: 0.001px solid #9F9F9F;
-
-}
-.select{
-  z-index:10;
-  position: absolute;
-  right:30rpx;
-  margin-left: 40rpx;
-  margin-top:16rpx;
-  color:  #9F9F9F;
-  transform: rotate(180deg);
-  width: 24rpx;
-  height: 24rpx;
-  border-bottom: 1.5px solid #9F9F9F;
-  border-right: 1.5px solid #9F9F9F;
-  transform: rotate(45deg);
-}
-.select-reverse{
-  z-index:10;
-  position: absolute;
-  right:30rpx;
-  margin-left: 40rpx;
-  margin-top:24rpx;
-  color:  #9F9F9F;
-  transform: rotate(180deg);
-  width: 24rpx;
-  height: 24rpx;
-  border-bottom: 1.5px solid #9F9F9F;
-  border-right: 1.5px solid #9F9F9F;
-  transform: rotate(225deg);
-}
-
-.type-content{
-  z-index: 3;
-  margin:auto;
-  position:absolute;
-  display: flex;
-  flex-direction: column;
-  background: #E3F7C8;
-  width: 100%;
-  height: 70vh;
-}
-.title{
-  display: flex;
-  padding-left: 20rpx;
-}
-.main-title{
-  margin-top: 20rpx;
-  font-family: 'Romanesco';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 32rpx;
-  line-height: 32rpx;
-  color: #000000;
-}
-.sub-title{
-  margin-top: 20rpx;
-  margin-left: 20rpx;
-  font-family: 'Romanesco';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 28rpx;
-  line-height: 28rpx;
-  color: #9F9F9F;
-}
-.formal{
-  z-index:10;
-  margin-top: 20rpx;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(50%, auto);
-  /* grid-gap: 10px; */
-  overflow: hidden;
-  gap: 10rpx;
-}
-.item{
-  text-align: center;
-  background: #E2FAF6;
-  border-radius: 10%;
-}
-.informal{
-  z-index:3;
-  margin-top: 20rpx;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(60%, auto);
-  grid-gap: 20rpx;
-  overflow: hidden;
-}
-
-
-.mask{
-  z-index: 1;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 230rpx;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

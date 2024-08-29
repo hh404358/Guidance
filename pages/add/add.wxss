@@ -165,10 +165,12 @@ page {
 }
 .send{
   position: fixed;
-  left:230rpx;
+  left:160rpx;
   bottom:45rpx;
-  width: 560rpx;
+  width: 540rpx;
   height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
   background: linear-gradient(344.92deg, #B4BBBC 6.09%, #C2C2C2 89.39%);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 24.5px;
@@ -326,103 +328,3 @@ border: 1px solid rgba(159, 159, 159, 0.15);
   height: 1px; /* 分割线高度 */
   background-color: #e0e0e0; /* 分割线颜色 */
 }
-
-/* 发布笔记后查看 */
-/* 轮播图 */
-.swiper {
-  width: 100%;
-  height: 30vh; /* 根据需要调整高度 */
-}
-
-.slide-image {
-  width: 100%;
-  height: 100%;
-}
-.num{
-position: fixed;
-width: 60rpx;
-height: 20px;
-left: 680rpx;
-top: 50rpx;
-color: white;
-text-align: center;
-font-size: 12px;
-background: rgba(84, 84, 84, 0.8);
-border-radius: 15px;
-
-}
-
-.focus{
-  position: relative;
- left: 220rpx;
-  width: 150rpx;
-  height: 60rpx;
-  background: #F8B827;
-  border-radius: 10px;
-  color: white;
-  text-align: center;
-  line-height: 48rpx;
-  font-size: 24rpx;
-  
-}
-.tag-item{
-  width: fit-content;
-  height: 54rpx;
-  background: rgba(217, 217, 217, 0.5);
-  border-radius: 39px;
-
-}
-.show-title{
-  margin-left: 20rpx;
-  height:auto;
-  width: 100%;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 19px;
-  color: #000000;
-
-
-}
-.show-body{
-  margin-left: 20rpx;
-  height:auto;
-  width: 100%;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 200%;
-  /* or 28px */
-  letter-spacing: 0.07em;
-
-  color: #000000;
-
-
-}
-.commentNum{
-  margin-left: 20rpx;
-  font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 11px;
-line-height: 13px;
-color: #9F9F9F;
-}
-.footer{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.footer .comment{
-  width: 161px;
-  height: 39px;
-  background: #CFDEBB;
-  border-radius: 24.5px;
-
-}
-
-
-
-

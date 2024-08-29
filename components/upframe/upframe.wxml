@@ -40,13 +40,32 @@
 </movable-area> -->
   
 <!--components/upframe/upframe.wxml-->
-<view  class="frame-container">
-  <view class="line">——</view>
+<view  class="frame-container" style="top:{{offsetY}}px">
+  <view class="line" bind:touchstart="onTouchStart"  bind:touchmove="onTouchMove" bind:touchend="onTouchEnd" >——</view>
   <home-input class="input" ></home-input>
   <view class="movablebox" >  
     <view class="body">
   <view class="text">"第一次"系列教程</view>
-  <view  class="type">
+  <view style="position: relative;padding-left:8px;width: 100vw;height: 31px;line-height:31px;font-size:16px;color:black;background: #D5EDB4">官方教程</view>
+
+    <swiper
+  autoplay="true"
+  interval="5000"
+  duration="1000"
+  circular="true"
+  class="swiper"
+  previous-margin="20px"
+  next-margin="20px"
+  display-multiple-items="1.5"
+  indicator-active-color="#F8B827"
+>
+  <swiper-item wx:for="{{formals}}" wx:key="index" class="video-item">
+    <video src="{{item}}" controls autoplay muted loop></video>
+    <!-- <image src="{{item}}" class="slide-image" mode="aspectFill" /> -->
+  </swiper-item>
+</swiper>
+
+  <!-- <view  class="type">
   <view wx:if="{{!selected}}">
     <span wx:for="{{labels}}" wx:key="id" style="margin-left: 15px;" class="label" >
     {{item.name}}
@@ -72,10 +91,12 @@
     </view>
   <span class="select" bind:tap="handleSelect"></span>
   </view>
-  <view class="mask" wx:if="{{selected}}"></view>
+  <view class="mask" wx:if="{{selected}}"></view> -->
+  <view style="position: relative;padding-left:8px;width: 100vw;height: 31px;line-height:31px;font-size:16px;color:black;background: #D5EDB4">精品教程</view>
   <post-frame class="box"></post-frame>
     </view>
  
   </view>
 </view>
+
   

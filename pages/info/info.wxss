@@ -1,0 +1,144 @@
+/* pages/info/info.wxss */
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #E3F7C8;
+}
+.camera{
+  /* pepicons-pencil:photo-camera-circle-filled */
+
+position: absolute;
+width: 25px;
+height: 25px;
+left: 216px;
+top: 209px;
+
+
+}
+.avatar{
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  left: 131px;
+  top: 110px;
+  background: #B8C5DC;
+  border-radius: 50%;
+
+}
+.img{
+  width: 25px;
+  height: 25px;
+}
+.userName{
+position: absolute;
+width: 236px;
+height: 32px;
+left: 136px;
+top: 233px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 29px;
+
+color: #000000;
+
+
+}
+.profile{
+position: absolute;
+width: 108px;
+height: 18px;
+left: 151px;
+top: 270px;
+display: flex;
+flex-wrap: wrap;
+font-family: 'Inder';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 19px;
+
+color: #9F9F9F;
+
+
+}
+.profile-icon{
+  position: absolute;
+  left: 130px;
+  top: 274px;
+  width: 12px;
+  height: 12px;
+}
+.phone{
+  display: flex;
+position: absolute;
+width: 355px;
+height: 72px;
+left: 10px;
+top: 331px;
+align-items: center;
+background: #E3F7C8;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 17px;
+
+}
+.birthday{
+  display: flex;
+box-sizing: border-box;
+position: relative;
+width: 355px;
+height: 72px;
+align-items: center;
+left: 10px;
+top: 2px;
+background: #E3F7C8;
+border: 0.5px solid rgba(0, 0, 0, 0.11);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 17px;
+
+}
+
+.sex{
+display: flex;
+box-sizing: border-box;
+position: relative;
+width: 355px;
+height: 154px;
+left: 10px;
+top: 24px;
+background: #E3F7C8;
+border: 0.5px solid rgba(0, 0, 0, 0.11);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 17px;
+
+}
+.man{
+position: relative;
+width: 43px;
+height: 59px;
+left: 38px;
+top: 8px;
+}
+.man-frame{
+position: absolute;
+width: 123px;
+height: 72px;
+left: 43px;
+top:48px;
+}
+.woman-frame{
+  position: absolute;
+width: 123px;
+height: 72px;
+right: 43px;
+top:48px;
+}
+.woman{
+  position: relative;
+  width: 43px;
+  height: 59px;
+  left: 38px;
+  top: 8px;
+}

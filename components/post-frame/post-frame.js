@@ -16,27 +16,48 @@ Component({
       {
         id:1,
         title:'title1',
-        image:'../../assests/community.png',
+        image:'../../assests/picture.png',
         userName:'haha',
-        avatar:'../../assests/community.png',
-        formal:true
+        avatar:'../../assests/picture.png',
+        formal:true,
+        likeNum:1
       },
       {
         id:2,
         title:'haha',
-        image:'../../assests/image.png',
+        image:'../../assests/新建画布1 1.png',
         userName:'haha',
-        avatar:'../../assests/community.png',
-        formal:false
+        avatar:'../../assests/picture.png',
+        formal:false,
+        likeNum:1
       },
       {
         id:3,
         title:'haha',
-        image:'../../assests/my.png',
+        image:'../../assests/新建画布1 1.png',
         userNme:'haha',
-        avatar:'../../assests/community.png',
-        formal:true
-      }
+        avatar:'../../assests/picture.png',
+        formal:true,
+        likeNum:1
+      },
+      {
+        id:4,
+        title:'title1',
+        image:'../../assests/picture.png',
+        userName:'haha',
+        avatar:'../../assests/picture.png',
+        formal:true,
+        likeNum:1
+      },
+      {
+        id:4,
+        title:'title1',
+        image:'../../assests/picture.png',
+        userName:'haha',
+        avatar:'../../assests/picture.png',
+        formal:true,
+        likeNum:1
+      },
     ]
   },
 
@@ -44,6 +65,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    handleAuthor(){
+      console.log('author')
+      wx.navigateTo({
+        url: '../../pages/author/author',
+      })
+    }
   }
 
 })

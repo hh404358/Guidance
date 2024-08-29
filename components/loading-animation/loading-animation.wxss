@@ -44,8 +44,8 @@
   position: absolute;
   left: 44%;
   top: 40%;
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
   animation: orbit 3s linear infinite;
 }
 

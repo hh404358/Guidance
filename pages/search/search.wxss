@@ -190,7 +190,7 @@ color: #9F9F9F;
   background:  #EFFFD9;
   border-radius: 24px;
   height: fit-content;
-  /* background: url('../../assests/icon.svg'); */
+  /* background: url('../../assests/search.png'); */
 }
 
 .hot-head{

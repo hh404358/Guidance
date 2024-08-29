@@ -250,14 +250,20 @@ Page({
   
   //发布
   handleSend(){
+    console.log('send')
     const sendNotes = this.data.sendNotes;
     const now = this.data.now;
     setTimeout(()=>{
       this.setData({
         sendNotes:true,
-        now:Date.now()
-      },1000)
-    })
+        now:Date.now(),
+       
+      })
+      wx.navigateTo({
+        url: '../../pages/note/note.js',
+      })
+    },1000)
+
    
   },
   handleFocus(){
