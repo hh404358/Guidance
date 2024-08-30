@@ -17,11 +17,7 @@
     </view>
   </view>
   <view class="mask">
-
-      <upframe style="z-index: 10;"> </upframe>
-
-  
-  
+     <upframe style="z-index: 10;"> </upframe>
  </view>
 
 </view>

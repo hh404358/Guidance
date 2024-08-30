@@ -1,0 +1,10 @@
+<!--pages/ar-camera/ar-camera.wxml-->
+<view>
+	<xr-get
+		disable-scroll
+    id="main-frame"
+    width="{{renderWidth}}"
+    height="{{renderHeight}}"
+    style="width:{{width}}px;height:{{height}}px;"
+	></xr-get>
+</view>

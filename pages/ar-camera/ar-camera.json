@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "xr-get": "../../components/xr-get/xr-create"
+  },
+  "disableScroll": true,
+  "navigationStyle": "default"
+}

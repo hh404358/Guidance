@@ -3,5 +3,19 @@
   "projectname": "Guidence",
   "setting": {
     "compileHotReLoad": true
+  },
+  "libVersion": "3.5.3",
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/ar-camera/ar-camera",
+          "pathName": "pages/ar-camera/ar-camera",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
   }
 }
