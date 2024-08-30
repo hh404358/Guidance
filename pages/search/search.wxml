@@ -1,6 +1,5 @@
 <!--pages/search/search.wxml-->
-<view class="head"><span class="back" bind:tap="back"></span>
-  搜索</view>
+<common-head><view>搜索</view></common-head>
 <view class="input">
   <image class="search" src="../../assests/search.svg">search</image>
   <input  placeholder="标题文案" value="{{content}}" style="position:absolute;top:6px;"/>
@@ -9,32 +8,56 @@
 <span class="btn" bind:tap="search">搜索</span>
 <view class="body">
   <view class="history">
-  
-  <view class="title">历史记录
-    <image class="del" src="../../assests/del.png" bind:tap="clearAll"></image>
+  <view class="title">
+    历史记录
+    <image class="del" src="../../assests/del.svg" bindtap="clearAll"></image>
   </view>
   <view class="grid-body">
-    <span class="item" wx:for="{{history}}">{{item}}</span>
-    <span class="item" wx:if="{{more}}"> <span class="more" ></span></span>
+    <!-- 假设最多展示6个历史记录 -->
+    <view class="item" wx:for="{{history}}" wx:key="index" wx:if="{{index < 6}}">
+      {{item}}
+    </view>
+      <view class="item" wx:for="{{history}}" wx:key="index" wx:if="{{history.length > 6&&more}}" >
+      {{item}}
+    </view>
+ <!-- 显示 "更多" 按钮 -->
+    <view class="item" >
+      <view class="more" wx:if="{{!more}}" bindtap="handleShowMore"></view>
+      <view class="more-rotated" wx:if="{{more}}" bindtap="handleShowMore"></view>
+    </view>
+     
   </view>
-   
-  </view>
+</view>
   <view class="guess">
-  <view class="title">猜你想搜 <image class="refresh" bind:tap="refresh" src="../../assests/refresh.svg"></image>
-  <image class="see" bind:tap="see" src="../../assests/refresh.png"></image></view>
-  <!-- <view class="grid-body"> -->
-    <view class="guess-item" wx:for="{{guess}}"></view>
+  <view class="title">猜你想搜 <image class="refresh" bind:tap="handleRefresh" src="../../assests/refresh.svg"></image>
+  <image class="see" bind:tap="handleSee" src="../../assests/eye.svg"></image></view>
+  <view class="guess-body" wx:if="{{see}}">
+    <view class="guess-item" wx:for="{{guess}}" wx:key="index" wx:if="{{index<6}}">
+    {{item}}</view>
+    </view>
   </view>
-  </view>
-  <view class="hot">
+  <view class="hot-search">
     <view class="hot-head">
       <image class="hot-icon" src="../../assests/mdi_hot.svg"></image>
      <span class="hot-title">热门搜索</span>
-    </view>
-    
-    <view class="star"></view>
-    <view class="hot-item" wx:for="{{hot}}" wx:key="id">{{id}} {{item}}</view>
-    <image class="icon" src="../../assests/icon.svg"></image>
+    </view>  
+  <image class="star" src="../../assests/star.svg"></image>
+  <view class="hot-item {{index <= 2 ? 'top-three' : ''}}" 
+        data-rank="{{index + 1}}" 
+        wx:for="{{hot}}" 
+        wx:key="unique" >     
+        <span style="color: {{index === 0 ? 'red' : index === 1 ? 'orange' : index === 2 ? 'yellow' : '#6A6A6A'}}; ">
+  {{index + 1}}
+</span>
+<span class="hot-text">
+  {{item}}
+</span>
   </view>
+  <image class="icon" src="../../assests/icon.svg"></image>
+</view>
+</view>
+  
+
+ 
 <!-- </view> -->
 

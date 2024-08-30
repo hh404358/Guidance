@@ -2,34 +2,12 @@
 <head></head>
 <view class="frame-container">
   <view  class="type">
-  <view wx:if="{{!selected}}" class="type-head">
-    <span wx:for="{{labels}}" wx:key="id" style="margin-left: 15px;" class="label" >
+  <view  class="type-head">
+    <span wx:for="{{labels}}" wx:key="id" class="label" >
     {{item.name}}
     </span>
   </view>
-    <view class="type-content" wx:else>
-    <view class="title">
-    <span class="main-title">我的频道</span>
-    <span class="sub-title">点击进入频道</span>
-    <span class="btn" bind:tap="handleEdit">{{editText}}</span>
-    <span class="select-reverse" bind:tap="handleSelect"></span>
-    </view>
-    <view class="formal">
-      <span wx:for="{{formal}}" wx:key="id" class="item">{{item.name}} 
-      <image src="../../assests/delete.png" class="delete" wx:if="{{edit}}"></image>
-      </span>
-    </view>
-    <view class="title">
-    <span class="main-title">推荐频道</span>
-    <span class="sub-title">点击进入频道</span>
-    </view>
-    <view class="informal">
-      <span wx:for="{{informal}}" wx:key="id" class="item">{{item.name}}</span>
-    </view>
-     
-    </view>
-    
-  <span class="select" bind:tap="handleSelect"></span>
-  </view>
-  <post-frame ></post-frame>
+  
+</view>
+<post-frame ></post-frame>
 </view>

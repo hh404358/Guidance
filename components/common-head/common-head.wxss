@@ -1,0 +1,32 @@
+/* components/common-head/common-head.wxss */
+.head{
+  /* position: absolute; */
+  top:20px;
+  padding: 66rpx;
+  height: 40rpx;
+  text-align: center;
+  margin:auto;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #000000;
+}
+.back{
+  position: absolute;
+  left: 4.36%;
+  right: 91.03%;
+  top: 110rpx;
+  bottom: 91.47%;
+  color:  #9F9F9F;
+  transform: rotate(180deg);
+  width: 20rpx;
+  height: 20rpx;
+  border-bottom: 1.5px solid #9F9F9F;
+  border-right: 1.5px solid #9F9F9F;
+  transform: rotate(135deg);
+
+}

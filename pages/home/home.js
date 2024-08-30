@@ -12,34 +12,74 @@ Page({
     context : wx.createMapContext('map', wx.createSelectorQuery().select('#map')),
     longitude:119.19245 ,
     latitude:26.056212,
+    selected:false,
+    labels:[
+      {
+        id:1,
+        name:'temperature'
+      },
+      {
+        id:2,
+        name:'clothes'
+      },
+      {
+        id:3,
+        name:'food'
+      },
+      {
+        id:4,
+        name:'tv'
+      },
+      {
+        id:5,
+        name:'music'
+      }
+    ],
+    selected:false,
+    formal:[
+      {
+        id:1,
+        name:'foraml'
+      },
+      {
+        id:2,
+        name:'foraml'
+      },
+      {
+        id:3,
+        name:'foraml'
+      },
+      {
+        id:4,
+        name:'foraml'
+      },
+      {
+        id:5,
+        name:'foraml'
+      }
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.startTimer();
+    wx.hideTabBar()
   },
   startTimer(){
     let lo = null;
     let la= null;
-    this.timer = setInterval(()=>{
+    this.timer = setTimeout(()=>{
       const context = this.data.context
       const current = this.data.current
       if(context){
         context.getCenterLocation({
           success(res){
-            lo = res.longitude;
-            la =  res.latitude;
-          }
-        })
-        context.moveToLocation()
-        context.getCenterLocation({
-          success(){
             if(res.longitude != lo || res.latitude != la){
-              this.setData({
-                current:false
-              })
+              this.data.current = false
+                // this.setData({
+                //   current:false
+                // })
               console.log('not before pos')
             }
           }
@@ -52,68 +92,72 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
+    setTimeout(() => {
+      console.log("页面加载完毕")
+      this.setData({
+        transitionCompleted:true,
+        showTransition:false
+      })
+      wx.showTabBar();
+      //使用这种方式无法实现页面动态更新
+      // this.transitionCompleted = true;   
+    }, 3000); // 调整动画执行的时间
+   
     // 这里页面初始化的时候调用
-    const context = this.data.context; 
-    //TODO:申请定位，获取定位的地图 接口
-    context.moveToLocation({
-      success(){
-        console.log('s')
-      },
-      complete(){
-        console.log('goback')
-      }
-    })
-    let latitude = this.data.latitude;
-    let longitude = this.data.longitude;
-    context.getCenterLocation({
-      success(res){
-        this.setData({
-          latitude: res.latitude,
-          longitude:res.longitude
-        })
-      },
-      fail(e){
-        console.log(e)
-      }
-    })
+    // const context = this.data.context; 
+    // //TODO:申请定位，获取定位的地图 接口
+    // context.moveToLocation({})
+    // let latitude = this.data.latitude;
+    // let longitude = this.data.longitude;
+    // context.getCenterLocation({
+    //   success(res){
+    //     this.setData({
+    //       latitude : res.latitude,
+    //       longitude : res.longitude
+    //     })
+          
+    //   },
+    // })
     // 必须要真机调试的时候才能看到标记点
     //标记当前位置
-    const marker = {
-      id:1,
-      latitude:latitude,
-      longitude:longitude,
-      width:30,
-      height:30
-    }
-    context.addMarkers({
-      markers:[marker],
-      success:function(){
-        console.log('s')
-      },
-      fail(e){
-        console.log(e)
-      },
-      complete(){
-        console.log('marker')
-      }
-    })
+    // const marker = {
+    //   id:1,
+    //   latitude:latitude,
+    //   longitude:longitude,
+    //   width:30,
+    //   height:30
+    // }
+    // context.addMarkers({
+    //   markers:[marker]
+    // })
     
-    // setTimeout(() => {
-    //   console.log("页面加载完毕")
-    //   this.setData({
-    //     transitionCompleted:true,
-    //     showTransition:false
-    //   })
-    //   //使用这种方式无法实现页面动态更新
-    //   // this.transitionCompleted = true;   
-    // }, 2000); // 调整动画执行的时间
+   
+  },
+  handleSelect(){
+    const selected = this.data.selected
+    this.setData({
+      selected : !selected
+    })
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    // const context = this.data.context;
+    // const longitude = this.data.longitude;
+    // const latitude = this.data.latitude;
+    // console.log(this)
+    // if(context){
+    //   context.getCenterLocation({
+    //     success(res){
+    //       longitude = res.longitude;
+    //       latitude =  res.latitude;
+    //       console.log(res)
+    //     }
+    //   })
+    // }
+    // this.startTimer();
   },
 
   /**
@@ -127,7 +171,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
-
+    
   },
 
   /**
@@ -162,18 +206,17 @@ Page({
   goBack(){ 
     const current = this.data.current;
     this.setData({
-      current: !current
+      current: true
     })
     const context = this.data.context;
     //回到原始定位点  
-    context.moveToLocation({
-      success(){
-        console.log('s')
-      },
-      complete(){
-        console.log('goback')
-      }
-    })
-    //TODO:监听页面位置移动
+    context.moveToLocation({ })
+  },
+  handleMove(){
+    console.log('move')
+    const current = this.data.current;
+    this.setData({
+      current: false
+    }) 
   }
 })

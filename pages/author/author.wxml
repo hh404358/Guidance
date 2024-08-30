@@ -1,0 +1,25 @@
+<head></head>
+<view class="container" style="background-image:url({{bg}}) ; background-size: cover;background-position: center;background-repeat: no-repeat">
+  
+  <image src="{{userInfo.avatarUrl}}" class="avatar"></image>
+  <span class="nickName" >{{userInfo.nickName}}</span>
+  <span class="profile">{{userInfo.profile}}</span>
+  <view class="indendity"><image src="{{userInfo.sex=='女'?'../../assests/女性 1.svg':'../../assests/男性 1.svg'}}" style="width:13px;height:16px;margin-left:10px;margin-right:2px"></image><view>{{userInfo.age}}岁</view></view>
+  <image src="../../assests/share.svg" style="width: 20px;height: 20px;position: absolute;top:110px;right:11px" bind:tap="onShareAppMessage"></image>
+  <image src="../../assests/picture.svg" style="width: 15px;height: 15px;position: absolute;top:3px;left:4px"></image>
+  <span style="position: absolute;right:20px;width: 79px;height: 29px;top: 249px;background: {{focus?'rgba(159, 159, 159, 0.76)':'#F8B827'}};border-radius: 18.5px;text-align: center;line-height:29px;color: white;" bind:tap="handleFocus">{{!focus?'关注':focused?'互相关注':'已关注'}}</span>
+  <view class="focus">
+  <view>{{focusNum}}</view><view>{{fans}}</view>
+  <view> {{myPost}}</view><view bind:tap="showFocus">关注 </view>
+  <view >粉丝</view><view>笔记</view>
+  </view>
+  <view class="movablebox" style="top:{{offsetY}}px">
+  <view class="head" bind:touchstart="onTouchStart" bind:touchmove="onTouchMove" bind:touchend="onTouchEnd" >笔记</view>
+  <view style="background: #E3F7C8;position:absolute;top:40px;left:0;width: 100vw;z-index:3"><post-frame></post-frame>
+  </view>
+    
+  </view>
+  
+
+
+</view>

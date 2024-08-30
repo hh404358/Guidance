@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "common-head":"../../components/common-head/common-head",
+    "go":"../../components/go/go",
+    "l-popup":"../../miniprogram_npm/lin-ui/popup",
+    "l-message":"../../miniprogram_npm/lin-ui/message",
+    "l-list":"../../miniprogram_npm/lin-ui/list"
+  }
 }

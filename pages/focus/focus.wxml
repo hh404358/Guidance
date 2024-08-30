@@ -1,0 +1,29 @@
+<!--pages/focus/focus.wxml-->
+<head></head>
+<view style="margin-left:20px;line-height:28px;text-align:center">
+  <view style="border-top:gray;width:100%;display: flex;" >
+    <view class="btn" style="background: {{isFocus?'rgba(248, 184, 39, 0.5)':'transparent'}};" bind:tap="showFocus">关注</view><view class="btn" style="background: {{!isFocus?'rgba(248, 184, 39, 0.5)':'transparent'}};" bind:tap="showFans">粉丝</view>
+   </view>
+
+  <view class="list" wx:if="{{isFocus}}">
+    <view wx:for="{{focusList}}" wx:key="index" class="focus-item">
+    <image src ="{{item.avatar}}" class="img"></image>
+    <view style="line-height:45px;margin-left: 6px;"> {{item.userName}}</view>
+    <view class="focus-btn" bind:tap="handleFocus" data-index="{{index}}">{{item.focused?'已关注':'互相关注'}}</view>
+
+    </view>
+  </view>
+  <view class="list" wx:else>
+    <view wx:for="{{fansList}}" wx:key="index" class="focus-item">
+    <image src ="{{item.avatar}}" class="img"></image>
+    <view> {{item.userName}}</view>
+    <view class="focus-btn" bind:tap="handleFans" data-index="{{index}}" style="{{item.focused?'':'color:#EFA600;border: 0.5px solid #EFA600;'}}">{{item.focused?'互相关注':'回关'}}</view>
+    </view>
+  </view>
+
+
+  
+
+
+</view>
+

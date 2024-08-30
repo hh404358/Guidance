@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "post-frame":"../../components/post-frame/post-frame",
+    "head":"../../components/common-head/common-head"
+  }
 }

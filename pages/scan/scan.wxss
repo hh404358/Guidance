@@ -1,0 +1,25 @@
+/* pages/scan/scan.wxss */
+.album{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  left: 600rpx;
+  top: 1200rpx;
+  border-radius: 50%;
+  background: #889392;
+  align-items: center;
+}
+image{
+  padding-top:20rpx;
+  padding-left:6rpx;
+  width:50rpx;
+  height:50rpx;
+}
+.text{
+  padding-left:6rpx;
+  padding-top: 5rpx;
+  font-size: 18rpx;
+  color: white;
+}

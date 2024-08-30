@@ -1,0 +1,28 @@
+<!--pages/scan/scan.wxml-->
+
+<xr-scene ar-system="modes:Plane;camera:Back">
+<common-head>
+<view>扫描</view>
+</common-head>
+  <xr-assets>
+    <!-- 加载一个GLTF模型 -->
+    <xr-asset-load type="gltf" asset-id="gltf-model" src=" " />
+  </xr-assets>
+  <xr-env env-data=" " />
+
+  <xr-node>
+    <!-- 将一个GLTF模型渲染在AR场景中 -->
+    <xr-ar-tracker  >
+      <xr-gltf model="gltf-model"  ></xr-gltf>
+    </xr-ar-tracker>
+    <xr-camera is-ar-camera  ></xr-camera>
+  </xr-node>
+  
+  <xr-node>
+    <!-- 场景光照 -->
+    <xr-light type="ambient"   />
+    <xr-light type="directional"   />
+  </xr-node>
+  <view class="album"> <image class="image" src="../../assests/album.svg"></image><span class = "text">相册</span></view>
+ 
+</xr-scene>

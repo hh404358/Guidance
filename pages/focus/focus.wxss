@@ -1,0 +1,54 @@
+/* pages/focus/focus.wxss */
+/* Rectangle 181 */
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135.86deg, rgba(198, 238, 148, 0.088) 22.26%, rgba(248, 184, 39, 0.092) 51.03%), conic-gradient(from -25.27deg at 114.23% 141.35%, rgba(226, 250, 246, 0.33) -18.49deg, rgba(252, 231, 184, 0.87) 23.94deg, #A7E1F4 314.04deg, rgba(226, 250, 246, 0.33) 341.51deg, rgba(252, 231, 184, 0.87) 383.94deg);
+}
+.btn{
+  /* Rectangle 208 */
+
+/* position: absolute; */
+width: 80px;
+height: 32px;
+left: 14px;
+top: 113px;
+border-radius: 17.5px;
+
+}
+.list{
+  display:flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.img{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.focus-item{
+  display: flex;
+}
+.focus-btn{
+/* Rectangle 208 */
+position: absolute;
+right:20px;
+box-sizing: border-box;
+width: 80px;
+height: 29px;
+border: 0.5px solid #9F9F9F;
+border-radius: 18.5px;
+font-family: 'Microsoft YaHei';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 29px;
+
+color: #9F9F9F;
+
+
+
+
+}
+

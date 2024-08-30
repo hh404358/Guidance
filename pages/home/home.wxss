@@ -7,47 +7,36 @@ page {
 }
 .frame-container{
   background: #E3F7C8;
+  color: #aaa;
 }
-
-.body{
+#map{
+  width: 100vw;
+  height:100vh;
   z-index:0;
 }
-.block1{
+.map-block1{
+  z-index:1;
   position: absolute;
-  top:650rpx;
-  right:20rpx;
+  top:261px;
+  left:330px;
   width: 70rpx;
   height: 70rpx;
   text-align: center;
-  background: #FFFFFF;
+  background: linear-gradient(357.78deg, #FFCB2B 98.2%, #FFF3D7 1.8%);
+  box-shadow: 2.85751e-16px 4.66667px 9.33333px rgba(47, 36, 8, 0.233), inset -8.76303e-17px -1.43111px 1.43111px #BF921F, inset 8.76303e-17px 1.43111px 1.43111px #FFD22C;
   border-radius: 10px;
   font-size: 30rpx;
   line-height: 60rpx ;
 }
-.block2{
+.map-block2{
+  z-index:1;
   position: absolute;
-  top:750rpx;
+  top:330px;
   right:20rpx;
   width: 70rpx;
   height: 70rpx;
   text-align: center;
-  background: #FFFFFF;
-  border-radius: 10px;
+
   font-size: 20rpx;
   line-height: 60px ;
-
 }
-.goback{
-  width: 60rpx;
-  height: 60rpx;
-}
-#map{
-  width: 100vw;
-  height:50vh;
-}
-/* .mask{
-  z-index:4;
-  background-color: lightblue;
-} */
-
-

@@ -2,11 +2,11 @@
 <view class="container">
   <view class="rectangle">
 <!-- avatarUrl:{{avatar}} -->
-<view class="iconfont icon-sousuo" bind:tap="handleSearch"/>
-<input model="{{value}}" placeholder="请输入目的地 " type="text" focus confirm-type="search"  class="font"></input>
-<view  class = "iconfont icon-saoyisao"/>
-<view class="iconfont icon-yuyin_o" /> 
+<view class="iconfont icon-sousuo" />
+<input model="{{value}}" placeholder="请输入目的地 " type="text" focus confirm-type="search"  class="font" 	bind:keyboardcompositionend="handleSearch"></input>
+<view  class = "iconfont icon-saoyisao" bind:tap="handleScan"/>
+<view class="iconfont icon-yuyin_o" bind:longpress="handleVoice" bind:touchcancel="stopVoice"/> 
 </view>
-<image class="vector" src="{{avatar}}"></image>
+<image class="vector" src="{{avatar}}" ></image>
 </view>
 

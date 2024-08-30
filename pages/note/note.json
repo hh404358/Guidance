@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "head":"../../components/common-head/common-head",
+    "go":"../../components/go/go"
+  }
+}

@@ -1,12 +1,18 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/info/info",
     "pages/my/my",
+    "pages/myNote/myNote",
+    "pages/note/note",
+    "pages/focus/focus",
     "pages/community/community",
-    "pages/search/search", 
+    "pages/search/search",
     "pages/indoor-guidance/indoor-guidance",
     "pages/add/add",
-    "pages/ar-camera/ar-camera"
+    "pages/ar-camera/ar-camera",
+    "pages/scan/scan",
+    "pages/author/author"
   ],
   "window": {
     "navigationStyle": "custom",
@@ -17,7 +23,8 @@
   "usingComponents": {
     "loading-animation": "/components/loading-animation/loading-animation",
     "home-input": "/components/home-input/home-input",
-    "head": "/components/head/head"
+    "head": "/components/head/head",
+    "l-button": "/miniprogram_npm/lin-ui/button/index"
   },
   "style": "v2",
   "componentFramework": "glass-easel",
@@ -49,9 +56,16 @@
   },
   "permission": {
     "scope.userLocation": {
-      "desc": "你的位置信息将用于Guidance小程序提供导航" 
-    }
-    
-  },
-  "lazyCodeLoading":"requiredComponents"
+      "desc": "你的位置信息将用于Guidance小程序提供导航"
+    },
+    "scope.camera": {
+      "desc": "请允许使用摄像头"
+    },
+    "scope.album": {
+      "desc": "请允许访问相册"
+    },
+    "scope.writePhotosAlbum": {
+      "desc": "请允许保存图片到相册"
+    } 
+  }
 }

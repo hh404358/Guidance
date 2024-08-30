@@ -1,2 +1,11 @@
-<!--pages/indoor-guidance/indoor-guidance.wxml-->
-<text>pages/indoor-guidance/indoor-guidance.wxml</text>
+  <common-head>
+<view>室内导航</view>
+</common-head>
+ <xr
+    disable-scroll
+    id="main-frame"
+    width="{{renderWidth}}"
+    height="{{renderHeight}}"
+    style="width:{{width}}px;height:{{height}}px;top:{{top}}px;left:{{left}}px;display:block;"
+    bind:arTrackerState="handleARTrackerState"
+  />
