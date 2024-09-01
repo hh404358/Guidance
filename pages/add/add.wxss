@@ -18,12 +18,14 @@ page {
 
   color: #B0B6B7;
 
-
+  overflow:auto;
 }
 .image-list {
   display: flex;
-  flex-wrap: wrap;
+  width:fit-content;
+  /* flex-wrap: wrap; */
   justify-content: start;
+ 
 }
 
 .uploaded-image {
@@ -38,11 +40,11 @@ page {
 }
 .block{
   margin: 20rpx;
-  width:200rpx;
-  height: 200rpx;
+  width:100px;
+  height: 100px;
   background: #D6E5C1;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   /* align-self: start;
   align-items: center; */
   color: #9F9F9F;
@@ -54,6 +56,7 @@ page {
   margin: auto;
 }
 .body{
+  margin-top:5px;
   display: flex;
   flex-direction: column;
   font-family: 'Inder';
@@ -64,13 +67,14 @@ page {
 /* line-height: 100px; */
 
   color: #B0B6B7;
-  margin-left: 20rpx;
+  /* margin-left: 20rpx; */
   border-bottom:  0.5px solid #B0B6B7;
 
 }
 .body-footer{
+  margin-left:18px;
   width: 100vw;
-  margin-bottom: 10rpx;
+  margin-bottom: 10px;
   display: flex;
   flex-direction:row;
 }
@@ -102,6 +106,7 @@ page {
   font-weight: 400;
   font-size: 20rpx;
   line-height: 40rpx;
+  text-align: center;
   color: #45413C;
 }
 .pos{
@@ -149,8 +154,9 @@ page {
 
 }
 .save{
+  z-index:10;
   position: relative;
-  bottom:0rpx;
+  bottom:60px;
   left:200rpx;
   width: 400rpx;
   height: 80rpx;
@@ -182,8 +188,9 @@ page {
   z-index: 5;
   position: absolute;
   top:550rpx;
-  width: 700rpx;
-  height: 600rpx;
+  width: 320px;
+  height: 200px;
+  margin-left:16px;
   background: #F8FEF0;
   border-radius: 10px;
 
@@ -213,28 +220,43 @@ border: 1px solid rgba(159, 159, 159, 0.15);
 .showTag{
   display: flex;
   flex-direction: row;
+  position: fixed;
 }
 /* 已选择标签样式 */
-.selected-tags {
+.selected-tags{
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: auto;
-  width: 230px;
-  height: 30px;
-  border: 1px solid #E3AE24;
-
+  /* flex-wrap: wrap; */
+  margin-left:0px;
+  /* margin-top:18px; */
+  
+  
+}
+.selectTag {
+  margin:5.5px;
+  /* position: absolute; */
+  width: 66px;
+  height: 23px;
+  color:white;
+  background: #F8B827;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 23px;
+  font-size: 10px;
 }
 
 .tag {
-  padding: 5px 10px;
-  margin: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #F8B827;
-  border-radius: 103px;
-  color:white;
+  margin:5.5px;
+  /* position: absolute; */
+  width: 66px;
+  height: 23px;
+  line-height: 23px;
+  left: 191px;
+  top: 489px;
+  color: gray;
+  background: #FFE19E;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 10px;
 
 }
 

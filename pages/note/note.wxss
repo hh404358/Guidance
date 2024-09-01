@@ -80,6 +80,19 @@ border-radius: 15px;
 
 
 }
+.label{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 200%;
+  /* or 28px */
+  letter-spacing: 0.07em;
+  
+  color: #265AB4;
+  
+  
+  }
 .commentNum{
   margin-left: 20rpx;
   font-family: 'Roboto';
@@ -140,6 +153,7 @@ border: 1px solid rgba(159, 159, 159, 0.15);
   width:30px;
   height: 30px;
   border-radius: 50%;
+  margin-left:10px;
 }
 .userName{
  font-family: 'Roboto';
@@ -149,6 +163,7 @@ font-size: 12px;
 line-height: 14px;
 margin-bottom: 4px;
 color: #A7AAA4;
+margin-left:10px;
 
 
 }

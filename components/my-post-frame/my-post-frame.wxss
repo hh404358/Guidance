@@ -1,0 +1,115 @@
+/* components/post-frame/post-frame.wxss */
+.post {
+  position: relative;
+  margin-top:20rpx;
+  margin-right: 20rpx;
+  display: flex;
+  flex-direction: row;
+  overflow-y:auto;
+  overflow-x:hidden;
+  height:78vh;
+  width: 100vw;
+  align-items: start;
+  flex-wrap: wrap;
+}
+.formal{
+  position: absolute;
+  top:0;
+  left: 0%;
+  width: 44px;
+  height: 17px;
+  padding-top: 10rpx;
+  font-size: 12px;
+  line-height: 12px;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 7.5px 0px 5px;
+  color: white;
+  text-align: center;
+}
+.icon{
+  display: flex;
+position: relative;
+width: max-content;
+height: 18px;
+left: 13px;
+top: -28px;
+background: rgba(0, 0, 0, 0.25);
+border-radius: 23px;
+line-height: 13px;
+font-size: 8px;
+color:white;
+}
+.box{
+  position: relative;
+  width: 48vw;
+  height: fit-content;
+  margin-left: 4rpx;
+  border-radius: 7.5px;
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom:8px;
+}
+.post .box {
+  transition: box-shadow 0.3s; /* 平滑过渡效果 */
+}
+
+.image-container {
+  width: 100%;
+}
+.img{
+  width: 100%;
+  height: auto;
+}
+.text-container{
+  display: flex;
+  width: 49vw;
+  flex-direction: column;
+  margin-bottom: 11px;
+}
+.title{
+  padding-top: 20rpx;
+  color: black;
+  font-size: larger;
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+.userName{
+  /* position: absolute; 
+  left: 60px;*/
+  margin-left:8px;
+  font-size: 28rpx;
+  color:gray;
+}
+.avatar{
+  /* position: absolute; 
+  left: 30px;*/
+  margin-left:20px;
+  border-radius: 100%;
+  width: 40rpx;
+  height: 40rpx;
+}
+.thumb{
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  right:20px;
+  bottom:13px;
+}
+.footer{
+  /* ——持续更新中—— */
+display: flex;
+margin-top: 20px;
+margin:  20px auto;
+/* margin:auto; */
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 11px;
+line-height: 13px;
+/* identical to box height */
+
+color: #9F9F9F;
+
+
+}
+

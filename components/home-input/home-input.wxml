@@ -2,11 +2,14 @@
 <view class="container">
   <view class="rectangle">
 <!-- avatarUrl:{{avatar}} -->
-<view class="iconfont icon-sousuo" />
+<!-- <view class="iconfont icon-sousuo" /> -->
+<image src="../../assests/search.svg" style="width:28px;height:28px;margin-left:10px"></image>
 <input model="{{value}}" placeholder="请输入目的地 " type="text" focus confirm-type="search"  class="font" 	bind:keyboardcompositionend="handleSearch"></input>
-<view  class = "iconfont icon-saoyisao" bind:tap="handleScan"/>
-<view class="iconfont icon-yuyin_o" bind:longpress="handleVoice" bind:touchcancel="stopVoice"/> 
+<!-- <view  class = "iconfont icon-saoyisao" bind:tap="handleScan"/> -->
+<!-- <view class="iconfont icon-yuyin_o" bind:longpress="handleVoice" bind:touchcancel="stopVoice"/>  -->
+<image src="../../assests/scan.svg" class="scan" bind:tap="handleScan"></image>
+<image src="../../assests/voice.svg" class="voice" bind:tap="handleVoice"></image>
 </view>
-<image class="vector" src="{{avatar}}" ></image>
+<image class="vector" src="{{avatar}}" bind:tap="handleMy"></image>
 </view>
 

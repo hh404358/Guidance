@@ -1,79 +1,74 @@
 <!--pages/add/add.wxml-->
 <common-head>笔记</common-head>
 <view >
-<view class="title">
- <!-- 图片列表 -->
- <view class="image-list">
-    <block wx:for="{{uploadedImages}}" wx:key="*this">
-      <image src="{{item.url}}" class="block" mode="aspectFill"></image>
-    </block>
-    <view class = "block">
+  <!-- 图片列表 -->
+  <view style="overflow: auto;">
+    <view class="image-list">
+  <view class = "block">
     <view wx:if="{{uploadedImages.size==0}}">
       <image src="../../assests/album.svg" class="img" bind:tap="onUpload" ></image>
     <view style="padding-bottom:20rpx;margin: auto;">照片/视频</view>
     </view>
     <view wx:else style="font-size: 100rpx;margin: auto;" bind:tap="onUpload">+</view>
-    
     </view> 
+    <block wx:for="{{uploadedImages}}" wx:key="*this" class = "block">
+      <image src="{{item.url}}" class="block" mode="aspectFill"></image>
+    </block>
+   
   </view>
-<input style="margin-left: 20rpx;font-size: 30rpx;" placeholder="填写标题会有更多赞哦~" value="{{title}}"></input>
+  </view>
+
+<view class="title">
+ 
+<input style="margin-left: 17px;font-size: 30rpx;" placeholder="填写标题会有更多赞哦~" value="{{title}}"></input>
 </view>
 <!-- 正文 -->
 <view class="body">
-<view>
-  <textarea placeholder="添加正文" value="{{body}}" focus placeholder-style="color:B0B6B7;font-size:26rpx">
+<view style="margin-left:18px;">
+  <textarea placeholder="添加正文" value="{{body}}" focus placeholder-style="color:B0B6B7;font-size:26rpx;line-height:30px;" >
 </textarea>
 </view>
 <!-- 正文底部：标签，@用户 -->
   <view class="body-footer">
-    <view class="label" bind:tap="showAddLabel">标签</view>
+    <view class="label" bind:tap="showAddLabel">#话题</view>
     <view class="user">@用户</view>
+    
+    
+  </view> 
+  <view style="overflow-x: auto;margin:0px">
+      <view class="selected-tags" >
+    <View wx:for="{{tags}}" wx:key="index" bind:tap="selectTag" class="{{item.selected?'selectTag':'tag'}}" data-index="{{index}}">{{item.name}}</View>
+
+    </view>
   </view>
   <view class="addLabel" wx:if="{{addLabel}}">
   <view class="title">
  
-    <view class="maintitle">添加标签 <span style="position:relative ;margin-left:500rpx;" bind:tap="showAddLabel">X</span></view>
+    <view class="maintitle">添加标签 <span style="position:relative ;margin-left:210px;" bind:tap="showAddLabel">X</span></view>
   <view class="subtitle">请根据笔记内容选择最贴合的话题</view>
   </view>
   <!-- 标签 -->
-<view class="showTag" bindtap="showPopup">
-<span style="margin-left:20rpx;color:black;margin-top:10rpx;">必选标签</span>
+<!-- <view class="showTag" bindtap="showPopup">
+<span style="margin-left:10px;color:black;margin-top:24px;width: 80px">必选标签</span>
   <view class="selected-tags" >
-    <block wx:for="{{selectedTags}}" wx:key="index">
-      <view class="tag" data-index="{{index}}" >
-        {{item}}
-        <text class="delete-icon" bindtap="deleteTag" data-index="{{index}}">X</text>
-      </view>
-    </block>
-    <span style="margin-left:20rpx;margin-top:15rpx">{{selectedTags?"继续选择":"请选择"}}</span>
-    <go style="transform: rotate(90deg);margin-left:410rpx;margin-top:15rpx;position: fixed;"></go>
+    <View wx:for="{{tags}}" wx:key="index" bind:tap="selectTag" class="{{item.selected?'selectTag':'tag'}}" data-index="{{index}}">{{item.name}}</View>
   </view> 
- <!-- 下拉选择框 -->
-<view class="popup" wx:if="{{isPopupVisible}}">
-  <view class="main-topics">
-  <l-list title="{{item.name}}" wx:for="{{mainTopics}}" wx:key="index" bindtap="selectMainTopic" data-index="{{index}}"></l-list>
-  </view>
-  <view class="sub-topics" > 
-    <view class="sub-topic" wx:for="{{selectedMainTopic.subTopics}}" wx:key="index" bindtap="selectSubTopic" data-index="{{index}}">
-      {{item}}
-    </view>
-  </view>
-</view>
- </view> 
+
+ </view>  -->
   
   </view>
  
 </view>
 <!-- 标记地点和公开可见 -->
-<view class="pos" bind:tap="handlePos"><image class="icon" src="../../assests/pos.svg"></image><text class="text">标记地点</text><go style="margin-top: 30rpx;margin-left:490rpx"></go></view>
-<view class="public" bind:tap="handlePublic"><image class="icon" src="{{!isPublic?'../../assests/lock.svg':'../../assests/unlock.svg'}}"></image><text class="text">公开可见</text><go style="margin-top: 30rpx;margin-left:490rpx"></go></view>
+<view class="pos" bind:tap="handlePos"><image class="icon" src="../../assests/pos.svg"></image><text class="text">标记地点</text><go style="position:absolute;margin-top: 30rpx;margin-left:350px"></go></view>
+<view class="public" bind:tap="handlePublic"><image style="{{isPublic?'width:20px;height:18px;margin:8px':'width:12px;height:15px;margin:11px;'}}  " src="{{!isPublic?'../../assests/note-lock.png':'../../assests/note-unlock.png'}}"></image><text class="text">{{isPublic?'公开可见':'仅自己可见'}}</text><go style="position:absolute;margin-top: 30rpx;margin-left:350px"></go></view>
 <view class="mask" wx:if="{{selectPublic}}"></view>
 <view class="public-frame" wx:if="{{selectPublic}}">
 <view style="margin-left: 350rpx;">——</view>
   <view class="selectPublic" >
-  <view class="con" bind:tap="ToPublic"><image src="../../assests/unlock.svg" class="image"></image><view style="font-size: 30rpx; margin-top:20rpx;">公开可见</view></view>
+  <view class="con" bind:tap="ToPublic"><image src="../../assests/note-unlock.png" style="width: 23px;height:20px;margin-top:8px"></image><view style="font-size: 30rpx; margin-top:20rpx;">公开可见</view></view>
   <view class="divider"></view>
-<view class="con" bind:tap="ToSecret"><image src="../../assests/lock.svg" class="image"></image><view style="font-size: 30rpx; margin-top:20rpx;">仅自己可见</view></view>
+<view class="con" bind:tap="ToSecret"><image src="../../assests/note-lock.png" style="width: 14px;height: 17px;margin-left:4px;margin-top:8px;margin-right: 5px;"></image><view style="font-size: 30rpx; margin-top:20rpx;">仅自己可见</view></view>
 </view>
 </view>
 

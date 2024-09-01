@@ -34,29 +34,53 @@ Component({
       wx.navigateTo({
         url: '/pages/scan/scan',
       })
-    }
-  },
-  handleVoice(){
-    const tempFilePath = this.data.voiceFile
-    wx.startRecord({
-      success (res) {
-        tempFilePath = res.tempFilePath
+    },
+    handleVoice(){
+      const tempFilePath = this.data.voiceFile
+      wx.startRecord({
+        success (res) {
+          tempFilePath = res.tempFilePath
+        }
+      })
+      
+    },
+    stopVoice(){
+      wx.stopRecord() // 结束录音
+      const tempFilePath = this.data.voiceFile
+      //发送给后端接收后端信息
+  
+    },
+    handleMy(){
+      console.log('tabMy')
+      let userInfo = null
+      wx.getUserInfo({
+        success(res){
+          userInfo = res.userInfo;
+          wx.setStorageSync('userInfo', userInfo);
+        }
+      })
+      if(userInfo !=null){
+        this.setData({
+          userInfo:userInfo
+        })
       }
-    })
-    
-  },
-  stopVoice(){
-    wx.stopRecord() // 结束录音
-    const tempFilePath = this.data.voiceFile
-    //发送给后端接收后端信息
+      wx.switchTab({
+        url: '../../pages/my/my',
+      })
+    }
 
-  },
-  handleMy(){
-    console.log('tabMy')
-    wx.switchTab({
-      url: '../../pages/my/my',
-    })
+
+
+
+
+
+
+
+
+
+
   }
+ 
 
   
 })

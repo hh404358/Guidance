@@ -5,52 +5,47 @@ Page({
    * 页面的初始数据
    */
   data: {
-    labels:[
-      {
-        id:1,
-        name:'temperature'
-      },
-      {
-        id:2,
-        name:'clothes'
-      },
-      {
-        id:3,
-        name:'food'
-      },
-      {
-        id:4,
-        name:'tv'
-      },
-      {
-        id:5,
-        name:'music'
-      }
-    ],
+    labels:['推荐','吐槽','精选','便民服务','美食','景点'],
     selected:false,
     edit:false,
     editText:'进入编辑',
-    formal:[
+    posts:[
       {
         id:1,
-        name:'foraml'
+        title:'1111',
+        image:'../../assests/add.png',
+        userName:'haha',
+        avatar:'../../assests/picture.png',
+        formal:true,
+        likeNum:1
       },
       {
         id:2,
-        name:'foraml'
+        title:'222222222',
+        image:'../../assests/新建画布1 1.png',
+        userName:'haha',
+        avatar:'../../assests/picture.png',
+        formal:false,
+        likeNum:1
       },
       {
         id:3,
-        name:'foraml'
+        title:'333333333',
+        image:'../../assests/新建画布1 1.png',
+        userNme:'haha',
+        avatar:'../../assests/picture.png',
+        formal:true,
+        likeNum:1
       },
       {
         id:4,
-        name:'foraml'
+        title:'title1',
+        image:'../../assests/picture.png',
+        userName:'haha',
+        avatar:'../../assests/picture.png',
+        formal:true,
+        likeNum:1
       },
-      {
-        id:5,
-        name:'foraml'
-      }
     ]
   },
 
@@ -70,15 +65,16 @@ Page({
     })
     
   },
-  handleLabel(label){
-    
+  handleLabel(e){
+    const label = console.log(e.target.dataSet.id)
+    //更改posts为点中的
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    //默认获取推荐post
   },
 
   /**

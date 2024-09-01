@@ -7,11 +7,67 @@ Component({
   properties: {
 
   },
+  lifetimes: {
+    attached: function() {
+      this.startAutoPlay();
+      //获取精品教程视频返回给posts
 
+    },
+    detached: function() {
+      this.stopAutoPlay();
+    }
+  },
   /**
    * 组件的初始数据
    */
   data: {
+    posts:[
+      {
+        id:1,
+        title:'1111',
+        image:'../../assests/add.png',
+        userName:'haha',
+        avatar:'../../assests/picture.png',
+        formal:true,
+        likeNum:1
+      },
+      {
+        id:2,
+        title:'222222222',
+        image:'../../assests/新建画布1 1.png',
+        userName:'haha',
+        avatar:'../../assests/picture.png',
+        formal:false,
+        likeNum:1
+      },
+      {
+        id:3,
+        title:'333333333',
+        image:'../../assests/新建画布1 1.png',
+        userNme:'haha',
+        avatar:'../../assests/picture.png',
+        formal:true,
+        likeNum:1
+      },
+      {
+        id:4,
+        title:'title1',
+        image:'../../assests/picture.png',
+        userName:'haha',
+        avatar:'../../assests/picture.png',
+        formal:true,
+        likeNum:1
+      },
+    ],
+    images: [
+      '../../assests/picture.png',
+      '../../assests/add.png',
+      '../../assests/picture.png',
+      '../../assests/add.png',
+      '../../assests/picture.png',
+      // 更多图片路径
+    ],
+    currentSlide: 0,
     startY:511,
     offsetY:511,
     formals:[
@@ -19,51 +75,9 @@ Component({
       '../../assests/add.png',
       '../../assests/add.png',
     ],
-    labels:[
-      {
-        id:1,
-        name:'temperature'
-      },
-      {
-        id:2,
-        name:'clothes'
-      },
-      {
-        id:3,
-        name:'food'
-      },
-      {
-        id:4,
-        name:'tv'
-      },
-      {
-        id:5,
-        name:'music'
-      }
-    ],
     selected:false,
-    formal:[
-      {
-        id:1,
-        name:'foraml'
-      },
-      {
-        id:2,
-        name:'foraml'
-      },
-      {
-        id:3,
-        name:'foraml'
-      },
-      {
-        id:4,
-        name:'foraml'
-      },
-      {
-        id:5,
-        name:'foraml'
-      }
-    ]
+    interval: null, // 用于存储定时器
+   
   },
 
   /**
@@ -132,5 +146,65 @@ Component({
       });
       console.log(this.data.startY,this.data.offsetY)
     },
+   // 自动播放函数
+  autoPlay: function() {
+    let currentSlide = this.data.currentSlide;
+    let images = this.data.images;
+    let nextSlide = (currentSlide + 1) % images.length;
+    this.setData({
+      currentSlide: nextSlide
+    });
+  },
+
+  // 启动自动播放
+  startAutoPlay: function() {
+    this.stopAutoPlay(); // 停止当前的自动播放
+    this.setData({
+      interval: setInterval(() => {
+        this.autoPlay();
+      }, 3000) // 每3秒自动播放下一张图片
+    });
+  },
+
+  // 停止自动播放
+  stopAutoPlay: function() {
+    if (this.data.interval) {
+      clearInterval(this.data.interval);
+      this.setData({
+        interval: null
+      });
+    }
+  },
+
+  dotTap: function(e) {
+    const index = e.currentTarget.dataset.index;
+    this.setData({
+      currentSlide: index
+    });
+    this.handleInteraction();
+  },
+
+  prevSlide: function() {
+    let current = this.data.currentSlide;
+    this.setData({
+      currentSlide: (current - 1 + this.data.images.length) % this.data.images.length
+    });
+    this.handleInteraction();
+  },
+
+  nextSlide: function() {
+    let current = this.data.currentSlide;
+    this.setData({
+      currentSlide: (current + 1) % this.data.images.length
+    });
+    this.handleInteraction();
+  },
+
+  handleInteraction: function() {
+    this.stopAutoPlay();
+    setTimeout(() => {
+      this.startAutoPlay();
+    }, 3000); // 3秒后恢复自动轮播
+  }
   }
 })

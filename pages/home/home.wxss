@@ -22,11 +22,14 @@ page {
   width: 70rpx;
   height: 70rpx;
   text-align: center;
-  background: linear-gradient(357.78deg, #FFCB2B 98.2%, #FFF3D7 1.8%);
+  background: linear-gradient(90deg, #FFCB2B 98.2%, #FFF3D7 1.8%);
   box-shadow: 2.85751e-16px 4.66667px 9.33333px rgba(47, 36, 8, 0.233), inset -8.76303e-17px -1.43111px 1.43111px #BF921F, inset 8.76303e-17px 1.43111px 1.43111px #FFD22C;
   border-radius: 10px;
   font-size: 30rpx;
-  line-height: 60rpx ;
+  line-height: 65rpx ;
+  color: #767171;
+
+
 }
 .map-block2{
   z-index:1;

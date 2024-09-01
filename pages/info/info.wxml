@@ -1,6 +1,8 @@
 <!--pages/info/info.wxml-->
-<head>个人资料</head>
-<image src="../../assests/bg.png" style="width:557px;height: 337px;z-index:0"></image>
+<view style="background: url('../../assests/info-bg.png'); height:55vh">
+
+<!-- <image src="../../assests/info-bg.png" style="width:557px;height: 337px;z-index:0"></image> -->
+<head >个人资料</head>
 <view class="camera"><image src="../../assests/info-camera.svg" class="img" style="position: absolute;z-index:4" bind:tap="handleAvatar"></image></view>
 
 <image src="{{avatar}}" class="avatar"> </image>
@@ -18,22 +20,22 @@
     <picker mode="date" value="{{birthday}}" start="1800-09-01" end="2025-09-01" bindchange="bindDateChange">{{birthday==''?'点击填写日期':birthday}}
   </picker></view></view>
 </view>
-<!-- <view wx:if="{{selectBirth}}">
 
-<view style="position: relative;bottom:24px;font-size: 12px;color: #9F9F9F;left:266px"><checkbox bind:tap="editBirthday"></checkbox>不展示</view>
-</view> -->
 <!-- 性别 -->
 <view class="sex" style="{{selectSex?'height:154px;':'height:63px;align-items:center'}}">
 <view style="display:flex;{{selectSex?'top:521px':'top:570px'}} ">
 <image src="../../assests/gender.svg" class="img" style="margin-left:17px;margin-top:10px;"></image>
 <view style="margin-left:10px;margin-top:10px;">性别</view>
-<view style="margin-left:129px;font-style: normal;font-weight: 400;font-size: 15px;line-height: 19px;color: #9F9F9F;margin-top:10px;" bind:tap="editSex">{{sex==''?'点击选择性别'?isMan:'男':'女'}}</view>
+<view style="margin-left:129px;font-style: normal;font-weight: 400;font-size: 15px;line-height: 19px;color: #9F9F9F;margin-top:10px;" bind:tap="editSex">{{sex==''?'点击选择性别':isMan?'男':'女'}}</view>
 </view>
 <view wx:if="{{selectSex}}">
   <view class="man-frame" style="{{isMan?'background: rgba(178, 213, 123, 0.08);box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);border-radius: 14px':''}}"><image src="../../assests/man.svg" class="man" bind:tap="toMan"></image>
 </view>
 <view class="woman-frame" style="{{!isMan?'background: rgba(178, 213, 123, 0.08);box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);border-radius: 14px':''}}"><image src="../../assests/woman.svg" class="woman" bind:tap="toWoman"></image>
 </view>
-<view style="position: absolute;bottom:4px;font-size: 12px;color: #9F9F9F;left:266px"><checkbox bind:tap="editSex"></checkbox>不展示</view>
+<!-- <view style="position: absolute;bottom:4px;font-size: 12px;color: #9F9F9F;left:266px"><checkbox bind:tap="editSex"></checkbox>不展示</view> -->
 </view>
+</view>
+
+
 </view>
