@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "post-frame":"../../components/post-frame/post-frame",
+    "post-frame":"../../components/my-post-frame/my-post-frame",
     "head":"../../components/common-head/common-head"
   }
 }

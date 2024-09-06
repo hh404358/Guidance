@@ -19,7 +19,7 @@
     </card>
   </view>
   <view style="display: flex;flex-direction: column;margin-left:8px;">
-    <card class="box" wx:for="{{posts}}" wx:key="index" bind:tap="postDetail" data-id="index" wx:if="{{index>=posts.length/2}}">
+    <card class="box" wx:for="{{posts}}" wx:key="index" bind:tap="postDetail" data-id="{{item.id}}" wx:if="{{index>=posts.length/2}}">
     <view class="image-container">
       <span class="formal" wx:if="{{item.formal}}">官方</span>
       <image src="{{item.image}}"  mode="widthFix" class="img"  ></image>
@@ -29,7 +29,7 @@
         <view style="display: flex;flex-direction: row;">
         <image class = "avatar" src="{{item.avatar}}" bind:tap="handleAuthor"></image>
         <text class="userName">{{item.userName}}</text>
-        <view><image src="../../assests/like.svg" class="thumb"></image></view>
+        <view><image src="../../assests/like.svg" class="thumb" data-index="{{item.id}}" bind:tap="handleLike"></image></view>
         <view style="position: absolute;right:10px;color: gray;font-size: 28rpx;">{{item.likeNum}}</view>
         </view>      
       </view>

@@ -10,9 +10,12 @@
   class="swiper"
   indicator-active-color="#F8B827"
 >
+
   <swiper-item wx:for="{{uploadedImages}}" wx:key="index">
+    <image src="../../assests/del.svg"class="img" style="position: fixed;width: 26px;height: 26px;left: 25px;top: 25px;z-index:100" ></image>
   <view class="num">{{index+1+'/'+uploadedImages.length}}</view>
     <image src="{{item}}" class="slide-image" mode="aspectFill" />
+    
   </swiper-item>
 </swiper>
 <view style="display: flex;flex-direction:row;margin-top: 10rpx;height: 70rpx;align-items: center;"><image src="../../assests/picture.png" style="position: relative;left:20rpx;width:60rpx;height:60rpx;border-radius: 50%;"></image>
@@ -44,8 +47,8 @@
 <view class="comment"><image src="../../assests/write.svg" style="position: fixed;left: 20px;width: 22px;height: 22px;"></image>
 <input placeholder="说点什么..." style="position: fixed;left: 44px;font-size:14px" ></input><view style="position: fixed;left: 132px;width: 18px;height: 25px;color: #545454;font-size:18px">@</view><image src="../../assests/picture.svg"style="position: fixed;left: 150px;width: 19px;height: 19px;"></image></view>
 <view style="position: fixed;bottom:15px;left:190px;display: flex;">
-  <image src="../../assests/like.svg" class="img"></image><span style="line-height: 30px;font-size: 14px;margin-right: 3px;">{{likeNum}}</span>
-<image src="../../assests/collect.svg" class="img"></image><span style="line-height: 30px;font-size: 14px;margin-right: 3px;">{{collectNum}}</span>
+  <view bind:tap="handleLike" class="like"><image src="../../assests/like.svg" class="img" ></image><span style="line-height: 30px;font-size: 14px;margin-right: 3px;">{{likeNum}}</span></view>
+<view bind:tap="handleCollect" class="collect" ><image src="../../assests/collect.svg" class="img"></image><span style="line-height: 30px;font-size: 14px;margin-right: 3px;">{{collectNum}}</span></view>
 <image src="../../assests/comment.svg" class="img"></image><span style="line-height: 30px;font-size: 14px;">{{commentNum}}</span>
 </view>
 </view>

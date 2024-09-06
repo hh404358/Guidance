@@ -190,5 +190,21 @@ Page({
     this.setData({
       isTagsVisible:!isTagsVisible
     })
+  },
+  handleLike(){
+    console.log('like:',likeNum)
+    this.setData({
+      likeNum:this.data.likeNum+1
+    })
+    const like = this.selectComponent('.like')
+    console.log(like)
+    
+    //向后端传信息
+  },
+  handleCollect(){
+    console.log('collect')
+    this.setData({
+      collectNum:this.data.collectNum+1
+    })
   }
 })

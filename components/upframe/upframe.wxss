@@ -35,6 +35,70 @@
   background: #E3F7C8;
  
 }
+/* pages/index/index.wxss */
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 250rpx; /* 根据需要调整高度 */
+}
+
+.slider-wrapper {
+  display: flex;
+  height:100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  width: 60%;
+  height:100%;
+  position: absolute;
+  top: 0;
+  
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 10rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.dot {
+  padding: 5rpx;
+}
+
+.dot text {
+  color: #ccc;
+}
+
+.dot.active text {
+  color: #333;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24rpx;
+  color: #fff;
+  cursor: pointer;
+}
+
+.left-arrow {
+  left: 10rpx;
+}
+
+.right-arrow {
+  right: 10rpx;
+}
 .body{
   position: relative;
   top:26px;

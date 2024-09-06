@@ -1,16 +1,30 @@
 {
+<<<<<<< HEAD
   "pages": [
     "pages/home/home",
+=======
+  "pages": ["pages/home/home",
+    "pages/add/add",
+>>>>>>> 48906a76e87ac91f5dacadabe2076515746d4e87
     "pages/info/info",
     "pages/my/my",
     "pages/myNote/myNote",
     "pages/note/note",
+<<<<<<< HEAD
+=======
+    
+    
+>>>>>>> 48906a76e87ac91f5dacadabe2076515746d4e87
     "pages/focus/focus",
     "pages/community/community",
     "pages/search/search",
     "pages/indoor-guidance/indoor-guidance",
+<<<<<<< HEAD
     "pages/add/add",
     "pages/ar-camera/ar-camera",
+=======
+    
+>>>>>>> 48906a76e87ac91f5dacadabe2076515746d4e87
     "pages/scan/scan",
     "pages/author/author"
   ],

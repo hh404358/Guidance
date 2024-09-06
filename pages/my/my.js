@@ -1,5 +1,6 @@
 // pages/my/my.js
 const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
+const userInfo = wx.getStorageSync('userInfo');
 Page({
 
   /**
@@ -7,10 +8,16 @@ Page({
    */
   data: {
   // userInfo: null,
-      userInfo: {
+    userInfo:userInfo?
+    {...userInfo,
+      profile:'',
+      age:''
+    }: 
+    {
         avatarUrl: defaultAvatarUrl,
         nickName: 'nickName',
-      },
+        age:''
+    },
       profile:wx.getStorageSync('profile')?wx.getStorageSync('profile'):'点击这里,填写简介',
       hasUserInfo: false,
       canIUseGetUserProfile: wx.canIUse('getUserProfile'),
@@ -61,7 +68,105 @@ Page({
       likeNum:2,
       isNote:true,//默认显示我的笔记
       isSearch:false,//默认不显示搜索框
-      isCollect:true,//默认显示我的收藏
+      //默认显示我的收藏
+      isCollect:true,
+      isHistory:false,
+      isNote:false,
+      offsetY:360,
+      noteList:[
+        {
+          id:1,
+          title:'title1',
+          image:'../../assests/picture.png',
+          userName:'haha',
+          avatar:'../../assests/picture.png',
+          formal:true,
+          likeNum:1
+        },
+        {
+          id:2,
+          title:'haha',
+          image:'../../assests/新建画布1 1.png',
+          userName:'haha',
+          avatar:'../../assests/picture.png',
+          formal:false,
+          likeNum:1
+        },
+        {
+          id:3,
+          title:'haha',
+          image:'../../assests/新建画布1 1.png',
+          userNme:'haha',
+          avatar:'../../assests/picture.png',
+          formal:true,
+          likeNum:1
+        },
+        {
+          id:4,
+          title:'title1',
+          image:'../../assests/picture.png',
+          userName:'haha',
+          avatar:'../../assests/picture.png',
+          formal:true,
+          likeNum:1
+        },
+        {
+          id:4,
+          title:'title1',
+          image:'../../assests/picture.png',
+          userName:'haha',
+          avatar:'../../assests/picture.png',
+          formal:true,
+          likeNum:1
+        },
+      ],
+      collectList:[
+        {
+          id:1,
+          title:'1111',
+          image:'../../assests/add.png',
+          userName:'haha',
+          avatar:'../../assests/picture.png',
+          formal:true,
+          likeNum:1
+        },
+        {
+          id:2,
+          title:'222222222',
+          image:'../../assests/新建画布1 1.png',
+          userName:'haha',
+          avatar:'../../assests/picture.png',
+          formal:false,
+          likeNum:1
+        },
+        {
+          id:3,
+          title:'333333333',
+          image:'../../assests/新建画布1 1.png',
+          userNme:'haha',
+          avatar:'../../assests/picture.png',
+          formal:true,
+          likeNum:1
+        },
+        {
+          id:4,
+          title:'title1',
+          image:'../../assests/picture.png',
+          userName:'haha',
+          avatar:'../../assests/picture.png',
+          formal:true,
+          likeNum:1
+        },
+        {
+          id:4,
+          title:'title1',
+          image:'../../assests/picture.png',
+          userName:'haha',
+          avatar:'../../assests/picture.png',
+          formal:true,
+          likeNum:1
+        },
+      ]
     
   },
 
@@ -78,19 +183,19 @@ Page({
 
     //   }
     // })
-    wx.getUserProfile({
-      desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-      success: (res) => {
-        console.log(res)
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      },
-      fail:(e)=>{
-        console.log(e)
-      }
-    })
+    // wx.getUserProfile({
+    //   desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+    //   success: (res) => {
+    //     console.log(res)
+    //     this.setData({
+    //       userInfo: res.userInfo,
+    //       hasUserInfo: true
+    //     })
+    //   },
+    //   fail:(e)=>{
+    //     console.log(e)
+    //   }
+    // })
     console.log(this.data.userInfo)
   },
 
@@ -178,6 +283,11 @@ handleShow3(){
     show3:!show3
   })
 },
+toInfo(){
+  wx.navigateTo({
+    url: '../../pages/info/info',
+  })
+},
 onTouchStart: function(e) {
   // 记录触摸开始时的位置
   this.data.startY = e.touches[0].clientY;
@@ -224,14 +334,18 @@ handleFocus(){
 },
 toNote(){
   const isNote = this.data.isNote
+  posts
   this.setData({
-    isNote:true
+    isNote:true,
+    //从后端获取noteList
+
   })
 },
 toMyCollect(){
   const isNote = this.data.isNote
   this.setData({
-    isNote:false
+    isNote:false,
+    //从后端获取collectList
   })
 },
 handleSearch(){
@@ -240,16 +354,33 @@ handleSearch(){
     isSearch:!isSearch
   })
 },
+handleCancel(){
+  const isSearch = this.data.isSearch;
+  this.setData({
+    isSearch:!isSearch
+  })
+},
+toNote(){
+  this.setData({
+    isNote:true,
+    isCollect:false,
+    isHistory:false
+  })
+},
   toCollect(){
   const isCollect = this.data.isCollect;
   this.setData({
-    isCollect:true
+    isNote:false,
+    isCollect:true,
+    isHistory:false
   })
 },
 toHistory(){
   const isCollect = this.data.isCollect;
   this.setData({
-    isCollect:false
+    isNote:false,
+    isCollect:false,
+    isHistory:true
   })
 }
 

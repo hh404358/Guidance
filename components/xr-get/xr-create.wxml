@@ -4,7 +4,7 @@
     <xr-asset-load type="gltf" asset-id="anchor" src="https://mmbizwxaminiprogram-1258344707.cos.ap-guangzhou.myqcloud.com/xr-frame/demo/ar-plane-marker.glb" />
     <xr-asset-load type="gltf" asset-id="miku" src="https://mmbizwxaminiprogram-1258344707.cos.ap-guangzhou.myqcloud.com/xr-frame/demo/miku.glb" />
   </xr-assets>
-
+   
   <xr-env env-data="xr-frame-team-workspace-day" />
   <xr-light type="ambient" color="1 1 1" intensity="1" />
   <xr-light type="directional" rotation="40 70 0" color="1 1 1" intensity="3" cast-shadow />

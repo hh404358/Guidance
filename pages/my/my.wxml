@@ -1,10 +1,10 @@
 <!--pages/my/my.wxml-->
 <view class="header">我的</view>
 <view class="container" style="background-image:url({{bg}}) ; background-size: cover;background-position: center;background-repeat: no-repeat">
-  <image src="{{userInfo.avatarUrl}}" class="avatar"></image>
+  <image src="{{userInfo.avatarUrl}}" class="avatar" bind:tap="toInfo"></image>
   <span class="nickName" >{{userInfo.nickName}}</span>
   <span class="profile">{{profile}}</span>
-  <span class="indendity">实名认证</span>
+  <view class="indendity"><image src="{{userInfo.sex=='女'?'../../assests/女性 1.svg':'../../assests/男性 1.svg'}}" style="width:13px;height:16px;margin:auto"></image><view wx:if="{{userInfo.age!=''}}">{{userInfo.age}}岁</view></view>
   <span class="setBackground" bind:tap="setBackground">
   <image src="../../assests/picture.svg" style="width: 15px;height: 15px;position: absolute;top:3px;left:4px"></image>
   <span style="position: absolute;top:0px;left:24px">设置背景</span>
@@ -42,10 +42,11 @@
 </view>
 <view class="movablebox" style="top:{{offsetY}}px" wx:if="{{!isSearch}}">
   <view class="head" bind:touchstart="onTouchStart" bind:touchmove="onTouchMove" bind:touchend="onTouchEnd" >
-  <view style="position:absolute;left:16px;width:161px;color: #9F9F9F;font-weight:normal;background: url('{{isNote?'../../assests/note-bg.svg':''}}')"  bind:tap="toNote">我的笔记</view><view style="position:absolute;left:180px;width:161px;color: #9F9F9F;font-weight:normal;background;: url('{{!isNote?'../../assests/collect-bg.svg':''}}')" bind:tap="toMyCollect">我的收藏</view>
+  <view style="position:absolute;left:16px;line-height:40px;width:161px;color: {{isNote?'black':'#9F9F9F'}};font-weight:normal;background:url( {{isNote?'../../assests/note-bg.svg':''}})"  bind:tap="toNote">我的笔记</view><view style="position:absolute;line-height:40px;left:180px;width:161px;color: {{!isNote?'black':'#9F9F9F'}};font-weight:normal;background: url({{!isNote ? '../../assests/collect-bg.svg' : ''}})" bind:tap="toMyCollect">我的收藏</view>
   <image src="../../assests/search.svg" style="width:20px;height:20px;position:absolute;right:17px;top:16px;" bind:tap="handleSearch"></image>
   </view>
-  <view style="background: #E3F7C8;position:absolute;top:40px;left:0;width: 100vw;z-index:3"><post-frame></post-frame>
+  <view style="background: #E3F7C8;position:absolute;top:38px;left:0;width: 100vw;">
+  <post-frame  posts="{{isNote?noteList:collectList}}"></post-frame>
   </view>
     
   </view>
@@ -60,12 +61,14 @@
   <input placeholder="搜索笔记或用户" value="{{value}}" style="position: absolute;top:8px;left:0px;font-size: 17px;text-align: center;line-height: 37px;font-size: 17px;font-weight: lighter;"></input>
  
   </view>
-  <view style="position: absolute;right:21px;top:21px;font-style: normal;font-weight:400;font-size: 17px;line-height: 19px;color: #9F9F9F;">取消</view>
+  <view style="position: absolute;right:21px;top:21px;font-style: normal;font-weight:400;font-size: 17px;line-height: 19px;color: #9F9F9F;" bind:tap="handleCancel">取消</view>
   </view>
   <view class="classfy">
+    <view style="color: {{isNote?'black':'#9F9F9F'}};border-bottom:solid {{isNote?' 1.5px #56ACA6 ':'0px'}}" bind:tap="toNote">我的笔记
+  </view>
   <view style="color: {{isCollect?'black':'#9F9F9F'}};border-bottom:solid {{isCollect?' 1.5px #56ACA6 ':'0px'}}" bind:tap="toCollect">我的收藏
   </view>
-  <view style="color: {{isCollect?'#9F9F9F':'black'}};border-bottom:solid {{!isCollect?' 1.5px #56ACA6 ':'0px'}}" bind:tap="toHistory">浏览历史</view>
+  <view style="color: {{isHistory?'black':'#9F9F9F'}};border-bottom:solid {{isHistory?' 1.5px #56ACA6 ':'0px'}}" bind:tap="toHistory">浏览历史</view>
   </view>
   </view>
   <view style="position:absolute;top:95px;left:0;width: 100vw;z-index:3"><post-frame></post-frame>

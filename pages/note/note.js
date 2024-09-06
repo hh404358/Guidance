@@ -1,3 +1,5 @@
+// import '../../utils/interface'
+
 Page({
 
   /**
@@ -22,45 +24,49 @@ Page({
     commentNum:1111,
     likeNum:3333,
     collectNum:2222,
-    commentList:[
-      {
-        avatar:'../../assests/新建画布1 1.png',
-        userName:'haha',
-        comment:'aaaaaaaaaaaaaaaaaaaa',
-        time:'4分钟前',
-        position:'shandong',
-        likeNum:111,
-        children:[
-          {
-            avatar:'../../assests/picture.png',
-            userName:'haha',
-            comment:'aaaaaaaaaaaaaaaaaaaa',
-            time:'4分钟前',
-            position:'shandong'
-          },
-          {
-            avatar:'../../assests/新建画布1 1.png',
-            userName:'haha',
-            comment:'aaaaaaaaaaaaaaaaaaaa',
-            time:'4分钟前',
-            position:'shandong'
-          }
-        ]
-      },
-      {
-        avatar:'../../assests/新建画布1 1.png',
-        userName:'haha',
-        comment:'aaaaaaaaaaaaaaaaaaaa',
-        time:'4分钟前',
-        position:'shandong'
-      },
-      {
-        avatar:'../../assests/picture.png',
-        userName:'haha',
-        comment:'aaaaaaaaaaaaaaaaaaaa',
-        time:'4分钟前',
-        position:'shandong'
-      }
+    commentList:[],
+    // commentList:[
+    //   {
+    //     avatar:'../../assests/picture.png',
+    //     userName:'haha',
+    //     comment:'水水水水水水水水水水水',
+    //     time:'4分钟前',
+    //     position:'shandong',
+    //     likeNum:111,
+    //     children:[
+    //       {
+    //         avatar:'../../assests/picture.png',
+    //         userName:'haha',
+    //         comment:'aaaaaaaaaaaaaaaaaaaa',
+    //         time:'4分钟前',
+    //         position:'shandong'
+    //       },
+    //       {
+    //         avatar:'../../assests/新建画布1 1.png',
+    //         userName:'haha',
+    //         comment:'aaaaaaaaaaaaaaaaaaaa',
+    //         time:'4分钟前',
+    //         position:'shandong'
+    //       }
+    //     ]
+    //   },
+    //   {
+    //     avatar:'../../assests/新建画布1 1.png',
+    //     userName:'haha',
+    //     comment:'aaaaaaaaaaaaaaaaaaaa',
+    //     time:'4分钟前',
+    //     position:'shandong'
+    //   },
+    //   {
+    //     avatar:'../../assests/picture.png',
+    //     userName:'haha',
+    //     comment:'aaaaaaaaaaaaaaaaaaaa',
+    //     time:'4分钟前',
+    //     position:'shandong'
+    //   }
+    // ],
+    labels:[
+      '动车','美食'
     ]
 
   },
@@ -68,6 +74,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+   const postId = options.postId;
+   console.log(postId)
+    //根据postId获取post详情及commentList
+    const commentList = this.data.commentList
+    // commentList = get_comment_list(1)
+    // console.log(commentList)
 
   },
 

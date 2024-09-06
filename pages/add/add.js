@@ -12,17 +12,32 @@ Page({
     save:false,//是否保存
     selectPublic:false,//打开公开选择框
     addLabel:false,//打开添加标签框
-    selectedTag:[],//选中标签
-    mainTopics: [
-      { name: '必选话题1', subTopics: ['子话题1-1', '子话题1-2'] },
-      {name: '必选话题2', subTopics: ['子话题2-1', '子话题2-2']},
-      { name: '必选话题1', subTopics: ['子话题1-1', '子话题1-2'] },
-      { name: '必选话题1', subTopics: ['子话题1-1', '子话题1-2'] },
-      { name: '必选话题1', subTopics: ['子话题1-1', '子话题1-2'] },
-      { name: '必选话题1', subTopics: ['子话题1-1', '子话题1-2'] },
+    tags:[
+      {
+        name:'推荐',
+        selected:false
+      },
+      {
+        name:'吐槽',
+        selected:false
+      },
+      {
+        name:'精选',
+        selected:false
+      },
+      {
+        name:'便民服务',
+        selected:false
+      },
+      {
+        name:'美食',
+        selected:true
+      },
+      {
+        name:'景点',
+        selected:false
+      }
     ],
-    selectedMainTopic: {},
-    selectedTags: [],
     isPopupVisible: false,
     selectPublic:false,
     isTagsVisible:false,
@@ -66,11 +81,19 @@ Page({
     }
   },
   deleteTag: function(e) {
-    console.log()
     const index = e.currentTarget.dataset.index;
     const selectedTags = this.data.selectedTags;
     this.setData({
       selectedTags: selectedTags.filter((tag, i) => i !== index)
+    });
+  },
+  selectTag(e){
+    const index = e.currentTarget.dataset.index;
+    const tags = this.data.tags.slice();
+    // 将被点击的标签的 selected 状态设置为 true
+    tags[index].selected = !tags[index].selected;
+    this.setData({
+      tags:tags
     });
   },
   hidePopup: function() {
@@ -260,7 +283,7 @@ Page({
        
       })
       wx.navigateTo({
-        url: '../../pages/note/note.js',
+        url: '../../pages/note/note',
       })
     },1000)
 

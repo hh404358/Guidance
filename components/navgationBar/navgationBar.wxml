@@ -1,0 +1,11 @@
+<!--component/navgationBar/navgationBar.wxml-->
+<view class="navbody" style="height: {{navTop}}px; ">
+  <view class="nav" style="height: {{navHeight+navTop}}px; top: {{-navHeight}}px;">
+  <!-- 导航栏内容 -->
+    <!-- <image src="https://img.js.design/assets/img/64ec38b6393c8941b9e86355.png" mode="aspectFill" class="navTitle" style="top: {{navTop*2-navHeight-16}}rpx;"/> -->
+    <text class="navTitle" style="top: {{navTop*2-navHeight-16}}rpx;"> <slot></slot></text>
+  </view>
+  <view class="navBlock" style="height: {{navHeight}}px; top: {{navTop-navHeight}}px;">
+    <!-- 导航栏内容占位 -->
+  </view>
+</view>

@@ -3,7 +3,6 @@
 <view class="input">
   <image class="search" src="../../assests/search.svg">search</image>
   <input  placeholder="标题文案" value="{{content}}" style="position:absolute;top:6px;"/>
-  <image class="camera" src="../../assests/camera.svg"></image>
 </view>
 <span class="btn" bind:tap="search">搜索</span>
 <view class="body">
@@ -36,12 +35,11 @@
     {{item}}</view>
     </view>
   </view>
-  <view class="hot-search">
+  <view class="hot-search" style="background: url('../../assests/Frame 14.png')no-repeat;">
     <view class="hot-head">
       <image class="hot-icon" src="../../assests/mdi_hot.svg"></image>
      <span class="hot-title">热门搜索</span>
     </view>  
-  <image class="star" src="../../assests/star.svg"></image>
   <view class="hot-item {{index <= 2 ? 'top-three' : ''}}" 
         data-rank="{{index + 1}}" 
         wx:for="{{hot}}" 
@@ -53,7 +51,6 @@
   {{item}}
 </span>
   </view>
-  <image class="icon" src="../../assests/icon.svg"></image>
 </view>
 </view>
   

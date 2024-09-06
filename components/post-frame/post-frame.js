@@ -1,64 +1,30 @@
 // components/post-frame/post-frame.js
+// import '../../utils/interface.js'
 Component({
 
   /**
    * 组件的属性列表
    */
   properties: {
+    posts: {
+      type: Array,
+      value: []
+    }
+  },
+  lifetimes:{
+    attached(){
+      
+    },
+    detached(){
+      
+    }
 
   },
-
   /**
    * 组件的初始数据
    */
   data: {
-    posts:[
-      {
-        id:1,
-        title:'title1',
-        image:'../../assests/picture.png',
-        userName:'haha',
-        avatar:'../../assests/picture.png',
-        formal:true,
-        likeNum:1
-      },
-      {
-        id:2,
-        title:'haha',
-        image:'../../assests/新建画布1 1.png',
-        userName:'haha',
-        avatar:'../../assests/picture.png',
-        formal:false,
-        likeNum:1
-      },
-      {
-        id:3,
-        title:'haha',
-        image:'../../assests/新建画布1 1.png',
-        userNme:'haha',
-        avatar:'../../assests/picture.png',
-        formal:true,
-        likeNum:1
-      },
-      {
-        id:4,
-        title:'title1',
-        image:'../../assests/picture.png',
-        userName:'haha',
-        avatar:'../../assests/picture.png',
-        formal:true,
-        likeNum:1
-      },
-      {
-        id:4,
-        title:'title1',
-        image:'../../assests/picture.png',
-        userName:'haha',
-        avatar:'../../assests/picture.png',
-        formal:true,
-        likeNum:1
-      },
-    ]
+  
   },
 
   /**
@@ -69,6 +35,18 @@ Component({
       console.log('author')
       wx.navigateTo({
         url: '../../pages/author/author',
+      })
+    },
+    handleLike(e){
+      const index= e.target.dataset.postId;
+      // like_post(index);
+    },
+    //点击进入帖子,获取帖子详情
+    //TODO：获取帖子详情后，对照片大小进行排序
+    postDetail(e){
+      const index=e.currentTarget.dataset.id;
+      wx.navigateTo({
+        url: `../../pages/note/note?postId=${index}`
       })
     }
   }

@@ -36,7 +36,6 @@ page {
   color: #9F9F9F;
 }
 .label:hover{
-  float: left;
   font-size: 36rpx;
   color: #000000;
 }
@@ -58,4 +57,5 @@ page {
   /* margin: auto; */
   line-height: 60rpx;
   height: 60rpx;
+  overflow-x: auto;
 }
