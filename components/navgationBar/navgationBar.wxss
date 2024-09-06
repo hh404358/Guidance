@@ -1,24 +1,30 @@
 /* component/navgationBar/navgationBar.wxss */
 .navbody {
   position: relative;
-  background-color: white;
+  background-color: #E3F7C8;
 }
 .nav {
   position: fixed;
   width: 100%;
-  padding-left: 46rpx;
+
   z-index: 3;
-  background-color: white;
+  background-color: #E3F7C8;
 }
 .navBlock {
   position: absolute;
   width: 100%;
 }
 .navTitle {
-  position: fixed;
-  width: 138rpx;
-  height: 32rpx;
-  font-weight: bold;
+ position: absolute;
+ text-align: center;
+
+ font-family: 'Roboto';
+ font-style: normal;
+ font-weight: 600;
+ font-size: 40rpx;
+ line-height: 100rpx;
+ text-align: center;
+ color: #000000;
   
 }
 .tabBar {

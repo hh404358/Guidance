@@ -1,4 +1,5 @@
 // pages/home/home.js
+const app = getApp();
 Page({
 
   /**
@@ -13,7 +14,9 @@ Page({
     longitude:119.19245 ,
     latitude:26.056212,
     selected:false,
-    selected:false,
+    upframeTop: app.globalData.height - 206,
+    upframestart: 0,
+
     
   },
 
@@ -175,5 +178,24 @@ Page({
     this.setData({
       current: false
     }) 
+  },
+  upframeMove(event) {
+    const { pageX, pageY } = event.touches[0];
+    console.log("getmove", pageX, pageY);
+    this.setData({upframeTop: pageY});
+  },
+  upframeMoveStart(event) {
+    const { pageX, pageY } = event.touches[0];
+    console.log("getmove", pageX, pageY);
+    this.setData({upframestart: pageY});
+  },
+  upframeMoveEnd(event) {
+    if(this.data.upframeTop < (app.globalData.height/2)) {
+      this.setData({upframeTop: app.globalData.navTop});
+    } else if(this.data.upframeTop < (app.globalData.height - 206)) {
+      this.setData({upframeTop: app.globalData.height - 206});
+    } else {
+      this.setData({upframeTop: app.globalData.height - 67});
+    }
   }
 })

@@ -1,15 +1,18 @@
 /* components/home-input/home-input.wxss */
 .container{
- display: flex;
+  display: flex;
+  width: auto;
+  justify-content: space-between;
+  padding: 0 6rpx;
 }
 /* Rectangle 52 */
 
 .rectangle{
   /* position:relative; */
   display: flex;
-  width: 320px;
-  height: 40px;
-  padding-top: 2vh;
+  width: 640rpx;
+  height: 92rpx;
+  align-items: center;
   background: #FFFFFF; 
   box-shadow: 0px 4px 4.8px rgba(0, 0, 0, 0.07);
   border-radius: 12px;
@@ -38,9 +41,8 @@
 /* Vector */
 
 .vector{
-  margin-left: 8rpx;
-  width: 100rpx;
-  height: 100rpx;
+  width: 92rpx;
+  height: 92rpx;
   border-radius: 50%;
   background: #B8C5DC;
 }
@@ -48,11 +50,13 @@
 .scan{
   width: 28px;
   height:28px;
-  margin-left: 45px;
+  margin-left: auto;
+  
 }
 .voice{
+  margin-left: 10px;
   width: 28px;
   height:28px;
-  margin-left:10px;
+  margin-right: 8px;
 }
 

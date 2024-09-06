@@ -4,7 +4,9 @@
     "post-frame":"../../components/post-frame/post-frame",
     "head":"../../components/navgationBar/navgationBar",
     "l-mask":"../../miniprogram_npm/lin-ui/mask",
-    "mask":"../../components/mask/mask"
+    "mask":"../../components/mask/mask",
+    "self-navgation-bar":"../../components/navgationBar/navgationBar"
    
-  }
+  },
+  "disableScroll": true
 }

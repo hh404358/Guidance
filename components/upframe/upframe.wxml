@@ -1,5 +1,5 @@
 <!--components/upframe/upframe.wxml-->
-<view  class="frame-container" style="top:{{offsetY}}px">
+<view  class="frame-container">
   <view class="line" bind:touchstart="onTouchStart"  bind:touchmove="onTouchMove" bind:touchend="onTouchEnd" >——</view>
   <home-input class="input" ></home-input>
   <view class="movablebox" >  

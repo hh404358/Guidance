@@ -68,8 +68,6 @@ Component({
       // 更多图片路径
     ],
     currentSlide: 0,
-    startY:511,
-    offsetY:511,
     formals:[
       '../../assests/add.png',
       '../../assests/add.png',
