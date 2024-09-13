@@ -6,7 +6,6 @@
     "l-mask":"../../miniprogram_npm/lin-ui/mask",
     "mask":"../../components/mask/mask",
     "self-navgation-bar":"../../components/navgationBar/navgationBar"
-   
   },
   "disableScroll": true
 }

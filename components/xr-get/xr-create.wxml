@@ -1,19 +1,13 @@
 <!--components/xr-get/xr-create.wxml-->
-<xr-scene ar-system="modes:Plane" bind:ready="handleReady">
+<xr-scene ar-system="modes:OSD" bind:ready="handleReady">
   <xr-assets bind:loaded="handleAssetsLoaded">
-    <xr-asset-load type="gltf" asset-id="anchor" src="https://mmbizwxaminiprogram-1258344707.cos.ap-guangzhou.myqcloud.com/xr-frame/demo/ar-plane-marker.glb" />
-    <xr-asset-load type="gltf" asset-id="miku" src="https://mmbizwxaminiprogram-1258344707.cos.ap-guangzhou.myqcloud.com/xr-frame/demo/miku.glb" />
+    <xr-asset-material asset-id="mat" effect="simple" uniforms="u_baseColorFactor: 0.8 0.6 0.4 0.7"  states="alphaMode:BLEND" ></xr-asset-material>
   </xr-assets>
-   
-  <xr-env env-data="xr-frame-team-workspace-day" />
-  <xr-light type="ambient" color="1 1 1" intensity="1" />
-  <xr-light type="directional" rotation="40 70 0" color="1 1 1" intensity="3" cast-shadow />
 
-  <xr-ar-tracker mode="Plane">
-    <xr-gltf model="anchor"></xr-gltf>
-  </xr-ar-tracker>
-  <xr-node node-id="setitem" visible="false">
-    <xr-gltf model="miku" anim-autoplay scale="0.08 0.08 0.08" rotation="0 180 0"/>
+  <xr-node>
+    <xr-ar-tracker mode="OSD" src="https://img.js.design/assets/img/66e420f23f8513aa9ad486f9.jpg">
+      <xr-mesh geometry="plane" material="mat" rotation="-90 0 0"></xr-mesh>
+    </xr-ar-tracker>
   </xr-node>
 
   <xr-camera clear-color="0.4 0.8 0.6 1" background="ar" is-ar-camera />

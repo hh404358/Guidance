@@ -157,7 +157,7 @@ Page({
   goIndoor(){
     console.log('indoor')
     wx.navigateTo({
-      url: '../indoor-guidance/indoor-guidance',
+      url: '../ar-camera/ar-camera',
       fail(e){
         console.log(e)
       }
@@ -181,12 +181,12 @@ Page({
   },
   upframeMove(event) {
     const { pageX, pageY } = event.touches[0];
-    console.log("getmove", pageX, pageY);
+    // console.log("getmove", pageX, pageY);
     this.setData({upframeTop: pageY});
   },
   upframeMoveStart(event) {
     const { pageX, pageY } = event.touches[0];
-    console.log("getmove", pageX, pageY);
+    // console.log("getmove", pageX, pageY);
     this.setData({upframestart: pageY});
   },
   upframeMoveEnd(event) {

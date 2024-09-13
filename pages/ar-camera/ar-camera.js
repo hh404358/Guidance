@@ -24,6 +24,7 @@ Page({
       renderWidth: width * dpi,
       renderHeight: height * dpi
     });
+
   },
 
   /**

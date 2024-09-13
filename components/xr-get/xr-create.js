@@ -19,6 +19,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    handleReady() {
+      console.log('ready');
+    },
+    handleAssetsLoaded(assets, error) {
+      console.log(assets, error);
+    }
   }
 })
