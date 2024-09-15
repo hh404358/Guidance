@@ -2,6 +2,7 @@
 <xr-scene ar-system="modes:OSD" bind:ready="handleReady">
   <xr-assets bind:loaded="handleAssetsLoaded">
     <xr-asset-material asset-id="mat" effect="simple" uniforms="u_baseColorFactor: 0.8 0.6 0.4 0.7"  states="alphaMode:BLEND" ></xr-asset-material>
+    <xr-asset-load type="texture"  asset-id="tan0" src="https://img.js.design/assets/img/66e6dc22d94a0ff0f7fb8413.png"/>
   </xr-assets>
 
   <xr-node>
@@ -9,6 +10,6 @@
       <xr-mesh geometry="plane" material="mat" rotation="-90 0 0"></xr-mesh>
     </xr-ar-tracker>
   </xr-node>
-
+  <xr-mesh node-id="mesh-plane" />
   <xr-camera clear-color="0.4 0.8 0.6 1" background="ar" is-ar-camera />
 </xr-scene>

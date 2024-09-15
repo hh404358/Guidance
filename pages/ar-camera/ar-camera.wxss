@@ -1,1 +1,23 @@
 /* pages/ar-camera/ar-camera.wxss */
+.sounder {
+	width: 168px;
+	height: auto;
+	font-family: Inder;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 17.5px;
+	text-align: left;
+	color: #000000;
+	margin-top: 14px;
+}
+.interaction {
+	margin-top: auto;
+	align-self: center;
+	width: 407rpx;
+	height: 70rpx;
+	border-radius: 14px;
+	background: rgba(197, 223, 157, 0.57);
+	display: flex;
+	align-items: center;
+	padding-left: 50rpx;
+}
