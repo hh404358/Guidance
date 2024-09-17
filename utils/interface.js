@@ -3,35 +3,133 @@
  * 
  */
 
-import axios from 'axios';
-// 设置默认配置
-axios.defaults.baseURL = 'http://10.205.28.161:8133';
-// axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
-// axios.defaults.headers.get['Content-Type'] = 'application/json;charset=UTF-8';
-// const token = 'a3e7154d-e425-4577-ab86-8d36f5f88d5c'; // 设置token
-// axios.defaults.headers.common['Authorization'] = 'Bearer ' + token; // 设置token
-axios.interceptors.response.use(null, (error) => {
-  const { config } = error;
-  if (!config || !config.retry) return Promise.reject(error);
+// import axios from 'axios';
+class axios_rewrite {
+  constructor(options) {
+    if (options) {
+      if (typeof(options.baseURL) == "string" ) {
+        this.baseURL = options.baseURL;
+      } else {
+        this.baseURL = "";
+      }
+      if (typeof(options.retry) == "number") {
+        this.retry = options.retry;
+      }
+      if (typeof(options.retryDelay) == "number") {
+        this.retryDelay = options.retryDelay;
+      }
+    }
+    
+  }
+  /**
+   * 
+   * @param {String} url 
+   * @param {Object} options
+   * @param {Object} options.params
+   * @param {Object} options.headers 
+   */
+  get(url, options) {
+    let geturl = this.baseURL + url;
+    const options_in = options?options:{};
+    if (options_in.params) {
+      geturl = geturl + '?' + this.toQueryString(options_in.params);
+    }
+    console.log(geturl);
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: geturl,
+        dataType: "json",
+        header: options_in.headers,
+        method: "GET",
+        timeout: this.retryDelay?this.retryDelay: 0,
+        success: (result) => {
+          resolve(result);
+        },
+        fail: (err) => {
+          reject(err);
+        }
+      })
+    })
+  }
+  post(url, options) {
+    let geturl = this.baseURL + url;
+    const options_in = options?options:{};
+    if (options_in.params) {
+      geturl = geturl + this.toQueryString(options_in.params);
+    }
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: geturl,
+        data: options_in.data,
+        dataType: "json",
+        header: options_in.headers,
+        method: 'POST',
+        timeout: this.retryDelay?this.retryDelay: 0,
+        success: (result) => {
+          resolve(result);
+        },
+        fail: (err) => {
+          reject(err);
+        }
+      })
+    })
+  }
+  put(url, options) {
+    let geturl = this.baseURL + url;
+    const options_in = options?options:{};
+    if (options_in.params) {
+      geturl = geturl + this.toQueryString(options_in.params);
+    }
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: geturl,
+        data: options_in.data,
+        dataType: "json",
+        header: options_in.headers,
+        method: 'PUT',
+        timeout: this.retryDelay?this.retryDelay: 0,
+        success: (result) => {
+          resolve(result);
+        },
+        fail: (err) => {
+          reject(err);
+        }
+      })
+    })
+  }
+  delete(url, options) {
+    let geturl = this.baseURL + url;
+    const options_in = options?options:{};
+    if (options_in.params) {
+      geturl = geturl + this.toQueryString(options_in.params);
+    }
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: geturl,
+        data: options_in.data,
+        dataType: "json",
+        header: options_in.headers,
+        method: 'DELETE',
+        timeout: this.retryDelay?this.retryDelay: 0,
+        success: (result) => {
+          resolve(result);
+        },
+        fail: (err) => {
+          reject(err);
+        }
+      })
+    })
+  }
 
-  config.__retryCount = config.__retryCount || 0;
-  if (config.__retryCount >= config.retry) return Promise.reject(error);
-
-  config.__retryCount += 1;
-  const backoff = new Promise((resolve) => {
-    setTimeout(() => resolve(), config.retryDelay || 1000);
-  });
-
-  return backoff.then(() => axios(config));
-});
-
-axios({
-  method: 'get',
-  url: 'http://10.205.28.161:8133',
+  toQueryString(params) {
+    return Object.keys(params).map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+  }
+}
+const axios = new axios_rewrite({
+  baseURL: 'http://154.40.44.199:8133',
   retry: 3,  // 最大重试次数
   retryDelay: 1000  // 重试延迟时间（毫秒）
 });
-
 
 class inter_comment_controller {
   constructor(parameters) {
@@ -1146,14 +1244,34 @@ function test() {
   }
 }
 
+export class InterGuiController {
+  constructor() {
+
+  }
+  TTS(input, options) {
+    if (!input) {
+      return -1;
+    }
+    try {
+      axios.get("/navigete/assistant/tts", {
+        params: {
+          input: input
+        }
+      }).then((data) => {
+        console.log(data);
+      })
+    } catch (error) {
+      console.error(error);
+    }
+  }
+}
+
 // const inter_comment_controller_in = new inter_comment_controller();
 // inter_comment_controller_in.update_comment(0,{})// 测试
-setInterval(() => {
-  console.log('重试中...');
-}, 10000);
-// test();
-export {
+
+export default {
   inter_comment_controller,
   inter_interaction_controller,
   inter_post_controller,
+  test
 }

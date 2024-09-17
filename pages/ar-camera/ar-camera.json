@@ -3,5 +3,6 @@
     "xr-get": "../../components/xr-get/xr-create"
   },
   "disableScroll": true,
-  "navigationStyle": "default"
+  "navigationStyle": "default",
+  "navigationBarTitleText": "室内导航"
 }

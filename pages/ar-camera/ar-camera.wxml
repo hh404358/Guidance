@@ -1,5 +1,5 @@
 <!--pages/ar-camera/ar-camera.wxml-->
-<view>
+<view bind:tap="onHideView" style="width: 100%; height: 100vh;">
 	<!-- <xr-get
 		disable-scroll
     id="main-frame"
@@ -7,15 +7,24 @@
     height="{{renderHeight}}"
     style="width:{{width}}px;height:{{height}}px;"
 	></xr-get> -->
-  <view style="position: fixed; top: 5%; right: 0px;z-index: 1;">
-    <!-- <image src="https://img.js.design/assets/img/66e6dc22d94a0ff0f7fb8413.png" mode="aspectFit" style="width: 245px;" /> -->
-    <view style="width: 448rpx; height: 300rpx; background: rgba(188, 223, 229, 0.6); width: 260px; border-radius: 32px; margin-right: 10rpx;  padding: 11px 16px 14px 16px; display: flex; flex-direction: column; position: relative;">
+  <view style="position: fixed; top: 10%; right: 0px;z-index: 1;" catch:tap="onHideViewStop">
+    <view style=" height: 300rpx; background: rgba(188, 223, 229, 0.6); width: 260px; border-radius: 32px; margin-right: 10rpx;  padding: 11px 16px 14px 16px; display: flex; flex-direction: column; position: relative; opacity: 0;" wx:if="{{chatWebShow}}" animation="{{animationChatWeb}}">
       <image src="../../assests/sound.png" mode="aspectFit" style="width: 16px; height: 16px;"/>
       <view class="sounder">您好！我是您的导游小追，跟随我的步伐前往目的地吧！</view>
-      <view class="interaction">
-        <input type="text" placeholder="有问题尽管问我~" placeholder-style="display: flex; flex: 1; height: auto;"/>
+      <view class="interaction" style="position: relative; ">
+        <input type="text" placeholder="有问题尽管问我~" placeholder-style="display: flex; flex: 1; height: auto;" style="width: 160px;" bindinput="onInputChange" wx:if="{{inputShow}}"/>
+        <view style="position: absolute; width: 20px; height: 20px; right: 8px; border-radius: 32px;" animation="{{animationSpeakerSign}}" wx:if="{{writerStatusShow}}" bind:touchstart="onSpeakerStart"  bind:touchend="onSpeakerEnd" hover-class="hoverView">
+          <view wx:for="{{speakerchanging}}" wx:key="index" style="width: auto; height: auto; position: absolute; left: {{item.left}}; top: 50%; transform: translate(-50%, -50%); opacity: {{item.opacity}};" wx:if="{{!inputShow}}">{{item.data}}</view>
+          <image src="../../assests/guispeaker.png" mode="aspectFill" style="width: 20px; height: 20px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);"  bind:tap="onSpeakerReady" />
+        </view>
+        <image src="../../assests/guiwriter.png" mode="aspectFill" style="width: 20px; height: 20px; position: absolute; right: 8px; opacity: 0;" wx:if="{{writerIconShow}}" bind:tap="onInputReady" animation="{{animationWriterSign}}" />
+        <view class="sendto" wx:if="{{sendStatusShow}}" animation="{{animationCommitButton}}" style="position: absolute; right: 8px;" bind:tap="onSendMail">发送</view>
       </view>
-      <image src="https://img.js.design/assets/img/66e6dc22d94a0ff0f7fb8413.png" mode="aspectFit" style="width: 162px; position: absolute;right: -30px; top: -130px;"/>
     </view>
+    <image src="{{getsrc}}" mode="aspectFit" style="width: 162px; position: absolute; right: -40px; top: -120px;" animation="{{animationDataPNG}}" bind:tap="{{isPNGDisabed?'':'onShowChatWeb'}}" />
+  </view>
+  <view style="position: absolute; bottom: 40px; left: 50%; transform: translate(-50%, -50%);">
+    <view wx:if="{{onGuiStart}}" style="background-color: #C6EE94; width: 140px; height: 40px; border-radius: 30px; display: flex; justify-content: center; align-items: center;" bind:tap="onGuiReady">{{guiText}}</view>
+    <image src="{{guiTurns.turns}}" mode="aspectFill" style="width: {{guiTurns.width}}px; height: {{guiTurns.height}}px;" wx:if="{{!onGuiStart}}" />
   </view>
 </view>

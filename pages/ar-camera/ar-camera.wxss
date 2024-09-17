@@ -13,11 +13,23 @@
 .interaction {
 	margin-top: auto;
 	align-self: center;
-	width: 407rpx;
+	width: 220px;
 	height: 70rpx;
 	border-radius: 14px;
 	background: rgba(197, 223, 157, 0.57);
 	display: flex;
 	align-items: center;
 	padding-left: 50rpx;
+}
+.sendto {
+	width: 110rpx;
+	height: 40rpx;
+	border-radius: 14px;
+	background-color: #C6EE94;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.hoverView {
+	background-color: #8cff00;
 }
